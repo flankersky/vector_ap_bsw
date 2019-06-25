@@ -1,2 +1,0 @@
-/usr/bin/ar qc libARA-SomeIP-posix.a  CMakeFiles/ARA-SomeIP-posix.dir/src/aracom_someip_proxy_instance_factory.cc.o
-/usr/bin/ranlib libARA-SomeIP-posix.a

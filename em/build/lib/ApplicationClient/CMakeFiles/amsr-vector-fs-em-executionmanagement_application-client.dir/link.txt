@@ -1,2 +1,0 @@
-/usr/bin/ar qc libamsr-vector-fs-em-executionmanagement_application-client.a  CMakeFiles/amsr-vector-fs-em-executionmanagement_application-client.dir/src/ara/exec/application_client.cc.o
-/usr/bin/ranlib libamsr-vector-fs-em-executionmanagement_application-client.a
