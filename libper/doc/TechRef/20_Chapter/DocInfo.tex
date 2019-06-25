@@ -1,0 +1,41 @@
+\chapter*{Document Information}
+\section*{History}
+
+\pgfplotstabletypeset[
+row sep=newline,
+header=true,
+before row=\hline, every row/.style={after row=\hline},
+% set horizontal lines
+columns/Author/.style={
+column name={Author},
+column type=|c|p{3.0cm}
+},
+columns/Date/.style={
+column name={Date},
+column type=|c|p{3.0cm}
+},
+columns/Version/.style={
+column name={Version},
+column type=|c|p{2.0cm}
+},
+columns/Remarks/.style={
+column name={Remarks},
+column type=|c|p{7.0cm}
+}
+]{
+Author & Date & Version & Remarks
+%
+H. Honz & 2018-02-21 & 0.00.00 & Initial version
+%
+H. Honz & 2018-02-21 & 1.00.00 & Initial content
+
+}
+
+\newpage
+
+%========================================================================================
+%  List of references
+%========================================================================================
+\section*{Reference Documents}
+\nocite{*} % include in the reference list every entry in the database files, without having to explicitly \cite or \nocite each entry.
+\printbibliography[heading=none] % Print list of references

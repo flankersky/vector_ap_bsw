@@ -1,0 +1,44 @@
+[195538.823986]~DLT~ 3529~INFO     ~FIFO /tmp/dlt cannot be opened. Retrying later...
+2019/06/21 16:55:53.455039 1955388242 000 ECU1 amsr INTM log info V 1 [Enabled console output.]
+2019/06/21 16:55:53.455116 1955388243 001 ECU1 amsr INTM log info V 2 [Init DLT back-end done, all known contexts set to default log level: Verbose]
+2019/06/21 16:55:53.455178 1955388244 000 ECU1 amsr Argu log warn V 2 [No path_to_application_manifest_schema provided. Using default:  /etc/application_manifest_schema.json]
+2019/06/21 16:55:53.455197 1955388244 001 ECU1 amsr Argu log warn V 2 [No path_to_machine_manifest_schema provided. Using default:  /etc/machine_manifest_schema.json]
+2019/06/21 16:55:53.455211 1955388244 002 ECU1 amsr Argu log warn V 2 [No path_to_applications provided. Using default:  /opt]
+2019/06/21 16:55:53.455224 1955388244 003 ECU1 amsr Argu log warn V 2 [No path_to_application_manifest_schema provided. Using default:  /etc/machine_manifest.json]
+2019/06/21 16:55:53.455917 1955388251 000 ECU1 amsr Proc log debug V 3 [Create  Searching for applications in:  /opt]
+2019/06/21 16:55:53.455995 1955388252 001 ECU1 amsr Proc log debug V 6 [Create  Found possible application location at:  /opt/amsrVectorAppExampleCalculatorServer  Checking for  manifest .json]
+2019/06/21 16:55:53.456082 1955388253 002 ECU1 amsr Proc log debug V 4 [LoadManifest  Reading manifest  /opt/amsrVectorAppExampleCalculatorServer/etc/ manifest.json]
+2019/06/21 16:55:53.457426 1955388266 002 ECU1 amsr INTM log debug V 1 [Requested an already registered context ID - returning: 00]
+2019/06/21 16:55:53.457463 1955388266 000 ECU1 amsr 00-- log debug V 2 [Process  Constructed Process.]
+2019/06/21 16:55:53.457483 1955388267 003 ECU1 amsr Proc log debug V 6 [ Added valid application. Manifest data: executable_name:  amsrVectorAppExampleCalculatorServer  process_name:    app_binary_path:  /opt/amsrVectorAppExampleCalculatorServer/bin/amsrVectorAppExampleCalculatorServer]
+2019/06/21 16:55:53.457532 1955388267 003 ECU1 amsr INTM log debug V 1 [Requested an already registered context ID - returning: 00]
+2019/06/21 16:55:53.457548 1955388267 001 ECU1 amsr 00-- log debug V 2 [Process  Constructed Process.]
+2019/06/21 16:55:53.457564 1955388267 004 ECU1 amsr Proc log debug V 6 [ Added valid application. Manifest data: executable_name:  amsrVectorAppExampleCalculatorServer  process_name:    app_binary_path:  /opt/amsrVectorAppExampleCalculatorServer/bin/amsrVectorAppExampleCalculatorServer]
+2019/06/21 16:55:53.457606 1955388268 005 ECU1 amsr Proc log debug V 6 [Create  Found possible application location at:  /opt/someipd-posix  Checking for  manifest .json]
+2019/06/21 16:55:53.457654 1955388268 006 ECU1 amsr Proc log debug V 4 [LoadManifest  Reading manifest  /opt/someipd-posix/etc/ manifest.json]
+2019/06/21 16:55:53.458865 1955388281 007 ECU1 amsr Proc log warn V 5 [GetCpuCoreMask   /opt/someipd-posix/etc/  does not contain object  cores]
+2019/06/21 16:55:53.458913 1955388281 004 ECU1 amsr INTM log debug V 1 [Requested an already registered context ID - returning: 00]
+2019/06/21 16:55:53.458929 1955388281 002 ECU1 amsr 00-- log debug V 2 [Process  Constructed Process.]
+2019/06/21 16:55:53.458947 1955388281 008 ECU1 amsr Proc log debug V 6 [ Added valid application. Manifest data: executable_name:  someipd-posix  process_name:    app_binary_path:  /opt/someipd-posix/bin/someipd-posix]
+2019/06/21 16:55:53.458981 1955388282 009 ECU1 amsr Proc log debug V 6 [Create  Found possible application location at:  /opt/dlt-viewer  Checking for  manifest .json]
+2019/06/21 16:55:53.459003 1955388282 010 ECU1 amsr Proc log debug V 6 [Create  Found possible application location at:  /opt/amsr-vector-fs-non-adaptive-genivi-dlt  Checking for  manifest .json]
+2019/06/21 16:55:53.459051 1955388282 011 ECU1 amsr Proc log debug V 4 [LoadManifest  Reading manifest  /opt/amsr-vector-fs-non-adaptive-genivi-dlt/etc/ manifest.json]
+2019/06/21 16:55:53.460175 1955388294 012 ECU1 amsr Proc log warn V 5 [GetCpuCoreMask   /opt/amsr-vector-fs-non-adaptive-genivi-dlt/etc/  does not contain object  cores]
+2019/06/21 16:55:53.460216 1955388294 005 ECU1 amsr INTM log debug V 1 [Request[195538.831392]~DLT~ 3533~NOTICE   ~Starting DLT Daemon; DLT Package Version: 2.18.2 STABLE, Package Revision: v2.18.2_12_g2ccad35, build on Jun 19 2019 18:00:41
+-SYSTEMD -SYSTEMD_WATCHDOG -TEST -SHM
+
+[195538.831502]~DLT~ 3533~INFO     ~FIFO size: 65536
+[195538.831521]~DLT~ 3533~INFO     ~Activate connection type: 5
+[195538.831549]~DLT~ 3533~INFO     ~dlt_daemon_socket_open: Socket created - socket_family:10, socket_type:1, protocol:6
+[195538.831581]~DLT~ 3533~WARNING  ~dlt_daemon_socket_open: bind() error 98: Address already in use
+[195538.831585]~DLT~ 3533~WARNING  ~failed to bind socket
+[195538.831589]~DLT~ 3533~ERROR    ~Could not initialize main socket.
+[195538.831592]~DLT~ 3533~CRITICAL ~Initialization of local connections failed!
+[195538.833918]~DLT~ 3532~INFO     ~FIFO /tmp/dlt cannot be opened. Retrying later...
+2019/06/21 16:55:53.464910 1955388341 000 ECU1 Some INTM log info V 1 [Enabled console output.]
+ReadServices 1
+ReadServices 2
+ReadServices 3
+ReadServices 4
+ReadServices 5
+[195548.840990]~DLT~ 3532~WARNING  ~Lost log messages in user buffer when exiting: 12

@@ -1,0 +1,19 @@
+{
+    "machine": {
+        "states": [
+            "Startup",
+            "Shutdown",
+            "Restart",
+            "Running"
+        ],
+        "functionGroups": [
+            {
+                "name": "group1",
+                "states": [
+                    "Starting",
+                    "Stopping"
+                ]
+            }
+        ]
+    }
+}

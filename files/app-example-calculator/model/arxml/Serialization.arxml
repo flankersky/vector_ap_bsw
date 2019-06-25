@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>calculator</SHORT-NAME>
+          <ELEMENTS>
+            <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+              <SHORT-NAME>subtractMethodTransformationProps</SHORT-NAME>
+              <DATA-PROTOTYPES>
+                <COMPOSITION-DATA-PROTOTYPE-REF>
+                  <DATA-PROTOTYPE-IREF>
+                    <CONTEXT-PORT-REF DEST="P-PORT-PROTOTYPE">/vector/calculator/calcServer/calcPortP</CONTEXT-PORT-REF>
+                    <TARGET-DATA-PROTOTYPE-REF DEST="ARGUMENT-DATA-PROTOTYPE">/vector/calculatorService/calculatorInterface/subtract/arg1</TARGET-DATA-PROTOTYPE-REF>
+                  </DATA-PROTOTYPE-IREF>
+                </COMPOSITION-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPES>
+              <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/vector/calculator/calcTransformationProps/subtractMethodTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+            </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+            <TRANSFORMATION-PROPS-SET>
+              <SHORT-NAME>calcTransformationProps</SHORT-NAME>
+              <TRANSFORMATION-PROPSS>
+                <AP-SOMEIP-TRANSFORMATION-PROPS>
+                  <SHORT-NAME>calculatorInterfaceTransformationProps</SHORT-NAME>
+                  <ALIGNMENT>16</ALIGNMENT>
+                  <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+                  <SESSION-HANDLING>SESSION-HANDLING-ACTIVE</SESSION-HANDLING>
+                  <SIZE-OF-ARRAY-LENGTH-FIELD>2</SIZE-OF-ARRAY-LENGTH-FIELD>
+                  <SIZE-OF-STRUCT-LENGTH-FIELD>1</SIZE-OF-STRUCT-LENGTH-FIELD>
+                  <SIZE-OF-UNION-LENGTH-FIELD>1</SIZE-OF-UNION-LENGTH-FIELD>
+                  <SIZE-OF-UNION-TYPE-SELECTOR-FIELD>1</SIZE-OF-UNION-TYPE-SELECTOR-FIELD>
+                </AP-SOMEIP-TRANSFORMATION-PROPS>
+                <AP-SOMEIP-TRANSFORMATION-PROPS>
+                  <SHORT-NAME>subtractMethodTransformationProps</SHORT-NAME>
+                  <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+                </AP-SOMEIP-TRANSFORMATION-PROPS>
+              </TRANSFORMATION-PROPSS>
+            </TRANSFORMATION-PROPS-SET>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET>
+              <SHORT-NAME>calcTransformationPropsOfInterface</SHORT-NAME>
+              <MAPPINGS>
+                <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                  <SHORT-NAME>calculatorInterfacePropsToElementMapping</SHORT-NAME>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/vector/calculatorService/calculatorInterface/divisionByZero</EVENT-REF>
+                  </EVENT-REFS>
+                  <FIELD-REFS>
+                    <FIELD-REF DEST="FIELD">/vector/calculatorService/calculatorInterface/divideResult</FIELD-REF>
+                  </FIELD-REFS>
+                  <METHOD-REFS>
+                    <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/calculatorService/calculatorInterface/subtract</METHOD-REF>
+                    <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/calculatorService/calculatorInterface/add</METHOD-REF>
+                    <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/calculatorService/calculatorInterface/divide</METHOD-REF>
+                  </METHOD-REFS>
+                  <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/vector/calculator/calcTransformationProps/calculatorInterfaceTransformationProps</TRANSFORMATION-PROPS-REF>
+                </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+              </MAPPINGS>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,47 @@
+%===========================================================================
+% Introduction
+%===========================================================================
+\chapter{Introduction}
+\index{Introduction}
+\label{chap:Introduction}
+The functional cluster Persistency offers two different mechanisms to access
+persistent memory, the Key-Value-Storage and the File-Proxy.
+
+The Key-Value-Storage offers access to one or multiple Key-Value-Databases for
+every adaptive application.
+
+A File-Proxy provides functions to read and write from files.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[
+		width=0.75\textwidth
+	]
+	{{architecture}.jpg}
+	\caption{Interfaces to other stack components}
+	\label{fig:architecture}
+\end{figure}
+
+%===========================================================================
+% Content
+
+%===========================================================================
+\section{Content}
+\label{Content}
+
+Persistency consists of these the following headers:
+\begin{itemize}
+	\item the Key-Value-Storage,
+	\item which stores Key-Value-Storage-Type,
+	\item the File-Proxy-Accessor-Factory,
+	\item defined persistency exceptions
+\end{itemize}
+
+%===========================================================================
+% Facts
+%===========================================================================
+\section{Facts}
+The File-Proxy-Accessor-Factory creates the instances of Read-, Write or
+Read-Write-Accessors to handle file reading or writing.
+As a user of the Key-Value-Storage it is up to you to sync the saved
+Key-Value-Pairs to the hard drive (to persist the Key-Value-Storage).

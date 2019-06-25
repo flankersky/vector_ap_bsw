@@ -1,0 +1,93 @@
+{
+  "category": "PLATFORM_LEVEL",
+  "name": "amsr-vector-fs-em-executionmanager-demo-application",
+  "isAdaptiveApplication": 1,
+  "processes": [
+    {
+      "name": "em-demo-process",
+      "startupConfigs": [
+        {
+          "schedulingPolicy": "SCHEDULING-POLICY-FIFO",
+          "schedulingPriority": 40,
+          "options": [
+            "Option1",
+            "Option2",
+            "msc"
+          ],
+          "executionDependency": {},
+          "machineStates": [
+            "Startup"
+          ],
+          "functionGroups": [
+            {
+              "name": "group1",
+              "states": [
+                "Starting",
+                "Stopping"
+              ]
+            }
+          ],
+          "cores": {
+            "shallNotRunOn": [
+              2,
+              3
+            ],
+            "shallRunOn": [
+              1
+            ]
+          }
+        },
+        {
+          "schedulingPolicy": "SCHEDULING-POLICY-ROUND-ROBIN",
+          "schedulingPriority": 40,
+          "options": [
+            "--floatArithmetic",
+            "coolCar"
+          ],
+          "executionDependency": {
+          },
+          "machineStates": [
+            "Running"
+          ],
+          "functionGroups": [
+            {
+              "name": "group1",
+              "states": [
+                "Driving"
+              ]
+            }
+          ],
+          "cores": {
+            "shallNotRunOn": [
+              2,
+              3
+            ],
+            "shallRunOn": [
+              1
+            ]
+          }
+        },
+        {
+          "schedulingPolicy": "SCHEDULING-POLICY-ROUND-ROBIN",
+          "schedulingPriority": 40,
+          "options": [
+            "Option3"
+          ],
+          "executionDependency": {},
+          "machineStates": [
+            "Running"
+          ],
+          "cores": {
+            "shallNotRunOn": [
+              2,
+              3
+            ],
+            "shallRunOn": [
+              1
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>calculator</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              <SHORT-NAME>calcServer</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>calcPortP</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/vector/calculatorService/calculatorInterface</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <EXECUTABLE>
+              <SHORT-NAME>amsrVectorAppExampleCalculatorServer</SHORT-NAME>
+              <ROOT-SW-COMPONENT-PROTOTYPE>
+                <SHORT-NAME>calcServerRootSwc</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/vector/calculator/calcServer</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <TRANSFORMATION-PROPS-MAPPING-SET-REF DEST="TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET">/vector/calculator/calcTransformationPropsOfInterface</TRANSFORMATION-PROPS-MAPPING-SET-REF>
+            </EXECUTABLE>
+            <ADAPTIVE-AUTOSAR-APPLICATION>
+              <SHORT-NAME>adaptiveCalculatorServer</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <EXECUTABLE-REFS>
+                <EXECUTABLE-REF DEST="EXECUTABLE">/vector/calculator/amsrVectorAppExampleCalculatorServer</EXECUTABLE-REF>
+              </EXECUTABLE-REFS>
+            </ADAPTIVE-AUTOSAR-APPLICATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

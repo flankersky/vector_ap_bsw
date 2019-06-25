@@ -1,0 +1,77 @@
+%========================================================================================
+% Document style / template
+%========================================================================================
+\input{Style_TechnicalReference}
+
+%========================================================================================
+% Document properties: Title, Version, Author, Status
+%========================================================================================
+\documentTitle{Persistency} % Document title
+\documentSubTitle{Technical Reference} % Document sub-title
+\documentSubSubTitle{Adaptive MICROSAR} % Document sub-sub-title
+\documentVersion{1.00.00} % Document version
+\documentAuthor{Holger Honz} % Document title
+\documentStatus{ Not Released} % Status: Release / Not Released
+
+\usepackage{listings}		  % Include the listings-package
+
+\begin{document}
+%========================================================================================
+% Document Information
+%========================================================================================
+\maketitle
+\include{DocInfo}
+
+%========================================================================================
+% Table of contents
+%========================================================================================
+\tableofcontents % Print the table of contents
+
+%========================================================================================
+% List of illustrations / tables / listings
+%========================================================================================
+\newpage
+\makelistofillustrations
+\makelistoftables
+\makelistoflistings
+
+%========================================================================================
+% Used words
+%========================================================================================
+\newcommand{\AMSR}{{Adaptive MICROSAR}}
+\newcommand{\DefRef}{\code{DefRef}}
+
+%========================================================================================
+% Chapters
+%========================================================================================
+\include{Introduction}
+\include{FunctionalDescription}
+\include{Integration}
+\include{Configuration}
+\include{KnownLimitations}
+
+%========================================================================================
+% Abbreviations
+%========================================================================================
+\nomenclature{$Cfg$}{\Cfg}
+\nomenclature{$Cfg5$}{\Cfg}
+\kf{$GenDevKit$}{GeneratorDevelopmentKit}
+
+\chapter{Abbreviations}
+\index{Abbreviations}
+\printnomenclature
+
+%========================================================================================
+% Index
+%========================================================================================
+\printindex
+
+%========================================================================================
+% Contacts page
+%========================================================================================
+\makecontactpage
+
+%========================================================================================
+% End of file
+%========================================================================================
+\end{document}

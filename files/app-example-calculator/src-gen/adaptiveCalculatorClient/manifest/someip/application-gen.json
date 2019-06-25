@@ -1,0 +1,98 @@
+
+{
+  "services" : [
+    {
+      "name" : "calculatorInterface_Someip",
+      "service_id" : 1666,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "subtract",
+          "id" : 1666,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "add",
+          "id" : 1602,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "divide",
+          "id" : 1603,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "SomeipDivideResultGetter",
+          "id" : 1701,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "SomeipDivideResultSetter",
+          "id" : 1702,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+        {
+          "name" : "DivisionByZero",
+          "id" : 45677,
+          "field" : false,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "SomeipDivideResultNotifier",
+          "id" : 33010,
+          "field" : true,
+          "proto" : "tcp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 9087,
+          "events" : [
+            33010
+          ]
+        },
+        {
+          "id" : 888,
+          "events" : [
+            45677
+          ]
+        }
+      ]
+    }
+  ],
+  "required_service_instances" : [
+    {
+      "service_id" : 1666,
+      "instance_id" : 1403,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "port_mapping" : {
+        "name" : "Calculator_RequiredSomeipServiceInstance_toMachine",
+        "address" : "192.168.7.2",
+        "tcp_port" : 31401
+      }
+    }
+  ],
+  "provided_service_instances" : [
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "CalcNetworkEndpoint",
+      "address" : "192.168.7.2",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12330
+      },
+      "ports" : [
+        {
+          "proto" : "tcp",
+          "port" : 31401
+        }
+      ]
+    }
+  ]
+}

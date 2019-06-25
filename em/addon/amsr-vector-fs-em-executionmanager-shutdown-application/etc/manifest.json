@@ -1,0 +1,27 @@
+{
+  "category" : "PLATFORM_LEVEL",
+  "name" : "amsr-vector-fs-em-executionmanager-shutdown-application",
+  "isAdaptiveApplication" : 1,
+  "processes" : [
+    {
+      "name" : "em-shutdown-process",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-FIFO",
+          "schedulingPriority" : 2,
+          "machineStates" : [
+            "Shutdown"
+          ],
+          "cores" : {
+            "shallNotRunOn" :  [
+               2
+            ],
+            "shallRunOn" :  [
+               3
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

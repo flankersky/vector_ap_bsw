@@ -1,0 +1,11 @@
+
+get_filename_component(PERSISTENCY_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(PERSISTENCY_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+set(PERSISTENCY_LIBRARIES "@LIBRARY_NAME@")
+
+find_package(RapidJSON REQUIRED)
+
+include("${PERSISTENCY_CMAKE_DIR}/persistencyTargets.cmake")
+
+find_package(vac REQUIRED)
+find_package(RapidJSON REQUIRED)

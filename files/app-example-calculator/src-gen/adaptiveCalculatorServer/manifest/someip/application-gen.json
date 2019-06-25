@@ -1,0 +1,122 @@
+
+{
+  "services" : [
+    {
+      "name" : "calculatorInterface_Someip",
+      "service_id" : 1666,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "subtract",
+          "id" : 1666,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "add",
+          "id" : 1602,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "divide",
+          "id" : 1603,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "SomeipDivideResultGetter",
+          "id" : 1701,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "SomeipDivideResultSetter",
+          "id" : 1702,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+        {
+          "name" : "DivisionByZero",
+          "id" : 45677,
+          "field" : false,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "SomeipDivideResultNotifier",
+          "id" : 33010,
+          "field" : true,
+          "proto" : "tcp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 9087,
+          "events" : [
+            33010
+          ]
+        },
+        {
+          "id" : 888,
+          "events" : [
+            45677
+          ]
+        }
+      ]
+    }
+  ],
+  "required_service_instances" : [
+  ],
+  "provided_service_instances" : [
+    {
+      "service_id" : 1666,
+      "instance_id" : 1403,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 2000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 3,
+        "eventgroups" : [
+          {
+            "id" : 9087,
+            "event_multicast_threshold" : 3,
+            "ttl" : 5
+          },
+          {
+            "id" : 888,
+            "event_multicast_threshold" : 3,
+            "ttl" : 5
+          }
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "Calculator_ProvidedSomeipServiceInstance_toMachine",
+          "address" : "192.168.7.2",
+          "tcp_port" : 31402
+        }
+      ]
+    }
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "CalcNetworkEndpoint",
+      "address" : "192.168.7.2",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12330
+      },
+      "ports" : [
+        {
+          "proto" : "tcp",
+          "port" : 31402
+        }
+      ]
+    }
+  ]
+}

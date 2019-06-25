@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>calculator</SHORT-NAME>
+          <ELEMENTS>
+            <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>Calculator_RequiredSomeipServiceInstance</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/calculatorInterface_Someip</SERVICE-INTERFACE-REF>
+              <REQUIRED-EVENT-GROUPS>
+                <SOMEIP-REQUIRED-EVENT-GROUP>
+                  <SHORT-NAME>Required_Divide_Eventgroup</SHORT-NAME>
+                  <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/deployment/calculatorInterface_Someip/DivideResult_Eventgroup</EVENT-GROUP-REF>
+                </SOMEIP-REQUIRED-EVENT-GROUP>
+              </REQUIRED-EVENT-GROUPS>
+              <REQUIRED-SERVICE-INSTANCE-ID>1403</REQUIRED-SERVICE-INSTANCE-ID>
+              <REQUIRED-SERVICE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>ANY</MINOR-VERSION>
+              </REQUIRED-SERVICE-VERSION>
+            </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>Calculator_RequiredSomeipServiceInstance_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ClientMachine/ClientConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/vector/calculator/Calculator_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+              <TCP-PORT>31401</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>Calculator_RequiredSomeipServiceInstance_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/calculator/amsrVectorAppExampleCalculatorClient/calcClientRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/vector/calculator/calcClient/calcPortR</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/calculator/calcClientProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/vector/calculator/Calculator_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

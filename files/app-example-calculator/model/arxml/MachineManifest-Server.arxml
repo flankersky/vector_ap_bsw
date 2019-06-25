@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE>
+          <SHORT-NAME>ServerMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>ServerConnector</SHORT-NAME>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/vector/Eth/EthCh1/CalcNetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <HW-ELEMENT-REFS />
+          <MACHINE-MODE-MACHINES>
+            <MODE-DECLARATION-GROUP-PROTOTYPE>
+              <SHORT-NAME>ServerMachineMode</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/vector/MachineStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+          </MACHINE-MODE-MACHINES>
+          <MODULE-INSTANTIATIONS>
+            <OS-MODULE-INSTANTIATION>
+              <SHORT-NAME>OsModule</SHORT-NAME>
+              <RESOURCE-GROUPS>
+                <RESOURCE-GROUP>
+                  <SHORT-NAME>OsModuleResources</SHORT-NAME>
+                </RESOURCE-GROUP>
+              </RESOURCE-GROUPS>
+            </OS-MODULE-INSTANTIATION>
+            <GENERIC-MODULE-INSTANTIATION>
+              <SHORT-NAME>ServerModule</SHORT-NAME>
+            </GENERIC-MODULE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+          <PROCESSORS>
+            <PROCESSOR>
+              <SHORT-NAME>processor</SHORT-NAME>
+              <CORES>
+                <PROCESSOR-CORE>
+                  <SHORT-NAME>core0</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV:Adaptive">
+                        <SD GID="DV:ProcessorCoreNumber">0</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE>
+                  <SHORT-NAME>core1</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV:Adaptive">
+                        <SD GID="DV:ProcessorCoreNumber">1</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE>
+                  <SHORT-NAME>core2</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV:Adaptive">
+                        <SD GID="DV:ProcessorCoreNumber">2</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE>
+                  <SHORT-NAME>core3</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV:Adaptive">
+                        <SD GID="DV:ProcessorCoreNumber">3</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                </PROCESSOR-CORE>
+              </CORES>
+            </PROCESSOR>
+          </PROCESSORS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/vector/Eth/EthCh1/SdMulticastEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>12330</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

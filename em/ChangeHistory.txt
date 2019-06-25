@@ -1,0 +1,19 @@
+/**********************************************************************************************************************
+ *  REVISION HISTORY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Version   Date        Author  Change Id                                    Description
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  01.00.00  2017-11-09  vismbn  -                                             Initial Version created
+ *  01.00.01  2017-11-13  visnep  If8b0c475f771249c3473d795fd23c6883f516e1c     1) StateClient class adapted as per AUTOSAR R17-10 (MachineStateClient
+ *                                                                              class is now called StateClient).
+ *                                                                              2) Cmake Package name changed to amsr-vector-fs-em-executionmanagement_state-client.
+ *  01.00.01  2017-11-13  visnep  I396bc618bd6d2bca3d7a38b2775b1d6883a7e3e3     1) Application and Application builder class refactored.
+ *                                                                                 Now the process instances are created per start config.
+ *                                                                              2) Application class files renamed to process.
+ *  01.00.03  2017-11-22  visnep  Ie8f044e72467fcda31a9df8663b34e9b7bb2ffb5     1) Apatation of machine mode change behaviour as per AUTOSAR R17-10.
+ *  01.02.00  2017-11-24  viseng  I7726dab8685b814a1d3591e49d1162c3fa4697b4     Renamed ApplicationStateClient to ApplicationClient
+ *  01.02.00  2017-11-24  viseng  Icb1b9c4c15a8ff3769a31aa21e98f0c9b2f614bb     Fixed namespace of ApplicationClient, updated ReportApplicationState API
+ *  01.02.00  2017-11-24  viseng  I07fda6ff12ee4fa3880bf9d742ab1a4fdd9caf77     Added ApplicationClient::SetLastResetCause API
+ *  01.02.00  2017-11-24  viseng  I1c387c282b8f31303f7b5a6692c2818dbb1aa81c     Added back communication channel and tests for ApplicationClient
+ *  01.02.00  2017-11-24  viseng  I75bbb142b9153db15b975e3703dd0fafce078f4d     Added GetLastResetCause API to ApplicationClient
+ *********************************************************************************************************************/

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvac.a  CMakeFiles/vac.dir/src/vac/memory/three_phase_allocator.cc.o CMakeFiles/vac.dir/src/vac/timer/timer_manager.cc.o CMakeFiles/vac.dir/src/vac/timer/timer.cc.o
+/usr/bin/ranlib libvac.a

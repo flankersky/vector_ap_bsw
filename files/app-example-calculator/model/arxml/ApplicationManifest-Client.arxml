@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>calculator</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS>
+              <SHORT-NAME>calcClientProc</SHORT-NAME>
+              <APPLICATION-MODE-MACHINE>
+                <SHORT-NAME>ClientModes</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/vector/MachineStates</TYPE-TREF>
+              </APPLICATION-MODE-MACHINE>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/vector/calculator/amsrVectorAppExampleCalculatorClient</EXECUTABLE-REF>
+              <MODE-DEPENDENT-STARTUP-CONFIGS>
+                <MODE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-IREFS>
+                    <FUNCTION-GROUP-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/vector/ClientMachine/fg_com</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/vector/MachineStates/Running</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-IREF>
+                  </FUNCTION-GROUP-IREFS>
+                  <MACHINE-MODE-IREFS>
+                    <MACHINE-MODE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/vector/ClientMachine/ClientMachineMode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/vector/MachineStates/Running</TARGET-MODE-DECLARATION-REF>
+                    </MACHINE-MODE-IREF>
+                  </MACHINE-MODE-IREFS>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/vector/calculator/ClientStartupConfigs/StartupRunning</STARTUP-CONFIG-REF>
+                </MODE-DEPENDENT-STARTUP-CONFIG>
+              </MODE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+            <PROCESS-TO-MACHINE-MAPPING-SET>
+              <SHORT-NAME>clientProcMachineMappingSet</SHORT-NAME>
+              <PROCESS-TO-MACHINE-MAPPINGS>
+                <PROCESS-TO-MACHINE-MAPPING>
+                  <SHORT-NAME>clientProcMachineMapping</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/vector/ClientMachine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/vector/calculator/calcClientProc</PROCESS-REF>
+                  <SHALL-NOT-RUN-ON-REFS>
+                    <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/vector/ClientMachine/processor/core1</SHALL-NOT-RUN-ON-REF>
+                    <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/vector/ClientMachine/processor/core2</SHALL-NOT-RUN-ON-REF>
+                    <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/vector/ClientMachine/processor/core3</SHALL-NOT-RUN-ON-REF>
+                  </SHALL-NOT-RUN-ON-REFS>
+                  <SHALL-RUN-ON-REFS>
+                    <SHALL-RUN-ON-REF DEST="PROCESSOR-CORE">/vector/ClientMachine/processor/core0</SHALL-RUN-ON-REF>
+                  </SHALL-RUN-ON-REFS>
+                </PROCESS-TO-MACHINE-MAPPING>
+              </PROCESS-TO-MACHINE-MAPPINGS>
+            </PROCESS-TO-MACHINE-MAPPING-SET>
+            <STARTUP-CONFIG-SET>
+              <SHORT-NAME>ClientStartupConfigs</SHORT-NAME>
+              <STARTUP-CONFIGS>
+                <STARTUP-CONFIG>
+                  <SHORT-NAME>StartupRunning</SHORT-NAME>
+                  <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>30</SCHEDULING-PRIORITY>
+                  <STARTUP-OPTIONS>
+                    <STARTUP-OPTION>
+                      <OPTION-ARGUMENT>/opt/amsrVectorAppExampleCalculatorClient/etc/application.json</OPTION-ARGUMENT>
+                      <OPTION-KIND>COMMAND-LINE-SHORT-FORM</OPTION-KIND>
+                      <OPTION-NAME>c</OPTION-NAME>
+                    </STARTUP-OPTION>
+                  </STARTUP-OPTIONS>
+                </STARTUP-CONFIG>
+              </STARTUP-CONFIGS>
+            </STARTUP-CONFIG-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

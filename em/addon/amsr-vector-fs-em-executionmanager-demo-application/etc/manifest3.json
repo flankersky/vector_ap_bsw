@@ -1,0 +1,35 @@
+{
+  "category": "APPLICATION_LEVEL",
+  "name": "amsr-vector-fs-em-executionmanager-demo-application3",
+  "isAdaptiveApplication": 1,
+  "processes": [
+    {
+      "name": "amsr-vector-fs-em-executionmanager-demo-application3",
+      "startupConfigs": [
+        {
+          "schedulingPolicy": "SCHEDULING-POLICY-FIFO",
+          "schedulingPriority": 40,
+          "options": [
+            "Option1",
+            "Option2"
+          ],
+          "executionDependency": {
+            "em-demo-process": 1
+          },
+          "machineStates": [
+            "Startup",
+            "Running"
+          ],
+          "cores": {
+            "shallNotRunOn": [
+              2
+            ],
+            "shallRunOn": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

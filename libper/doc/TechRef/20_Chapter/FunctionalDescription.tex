@@ -1,0 +1,54 @@
+%===========================================================================
+% Functional Description
+%===========================================================================
+\chapter{Functional Description}
+\label{chap:FunctionalDescription}
+
+%===========================================================================
+% Content
+%===========================================================================
+\section{Basics}
+\label{sec:Basics}
+\index{Basics}
+The functional cluster Persistency offers two different mechanisms to access
+persistent memory. Key-Value-Storage offers access to one or multiple
+Key-Value-Databases for every adaptive component. The File-Proxy enables access
+to read and write from/to files.
+
+\section{Key-Value-Storage}
+\label{sec:Key-Value-Storage}
+\index{Key-Value-Storage}
+
+The Key-Value-Storage can be filled with KvsTypes (see \ref{sec:Key-Value-Type}). It offers
+functionality to add, manage and remove key-value pairs. When syncing the
+stored pairs to the hard drive, they will be written in json format.
+
+\subsection{Key-Value-Type}
+\label{sec:Key-Value-Type}
+\index{Key-Value-Type}
+
+A Key-Value-Pair can be of a limited set of types. These types are: boolean,
+float, double, signed integer (size from 8 to 64 bit), unsigned integer (size
+from 8 to 64 bit), string, binary data and object (which consists of one or
+more KvsTypes).
+The KvsType class offers the functionality to check which type is stored, get
+the value, get or set the key and store or get an array.
+
+\section{File-Proxy-Accessor-Factory}
+\label{sec:File-Proxy-Accessor-Factory}
+\index{File-Proxy-Accessor-Factory}
+
+The FileProxyAccessorFactory creates objects which are able to read or write
+from given files. Therefor there are three possible classes: ReadAccessor,
+WriteAccessor and ReadWriteAccessor. The names of the classes are
+elf-explanatory.
+
+\section{Persistency-Exceptions}
+\label{sec:Persistency-Exceptions}
+\index{Persistency-Exceptions}
+
+The specification of the persistency cluster defines three different exceptions
+to distinguish errors in the usage of the key-value-storage or the file-proxy
+access. These exceptions are: ExceptionLogicError,
+ExceptionStorageLocationNotFound, ExceptionPhysicalStorageError. All exceptions
+do have an error message appended.

@@ -1,0 +1,144 @@
+%===========================================================================
+\chapter{Integration}
+\label{chap:Integration}
+\index{Integration}
+
+%===========================================================================
+\section{Build Dependencies}
+\label{sec:BuildDependencies}
+\index{Build Dependencies}
+
+To build Persistency the following components are required:
+\begin{itemize}
+	\item amsr-vector-fs-libvac
+\end{itemize}
+Please also note figure \ref{fig:architecture} on page
+\pageref{fig:architecture}.
+
+%===========================================================================
+\section{Runtime Dependencies}
+\label{sec:RuntimeDependencies}
+
+%===========================================================================
+\section{Files and include structure}
+\label{sec:FilesAndIncludeStructure}
+
+The header files can be included like this:
+
+ara/per/<header\_name>
+
+The <header\_name>s are specified in
+\href{https://www.autosar.org/fileadmin/user\_upload/standards/adaptive/17-10/AUTOSAR\_SWS_Persistency.pdf}{AUTOSAR\_SWS\_Persistency}.
+
+%===========================================================================
+\section{Cmake}
+\label{sec:Cmake}
+\index{cmake}
+For detailed usage of cmake see documentation available at
+\href{cmake.org}{https://cmake.org/documentation}.
+
+\subsection{Build}
+\label{sec:Cmake:Build}
+\index{Build}
+The cmake project provided with this component has options as specified in
+\ref{tab:cmakeOptions}.
+
+\begin{table}[h!]
+	\pgfplotstabletypeset[row sep=newline]{
+		cmake option	  & Description       & Defaultvalue
+		-DENABLE\_DOXYGEN & Vector internal use. Set to OFF & OFF
+		-DBUILD\_TESTS & Vector internal use. Set to OFF & OFF
+		-DENABLE\_STATIC\_ANALYSIS & Vector internal use. Set to OFF & OFF
+	}
+	\caption{cmake options}
+	\label{tab:cmakeOptions}
+\end{table}
+
+\subsection{Exported cmake packages}{}
+\label{sec:Cmake:Build:Packages}
+The amsr-vector-fs-em-persistency cmake project exports packages which can be
+used to compile against the exported
+library.
+
+\subsection{Usage}
+\label{sec:Cmake:Build:Usage}
+\index{Usage}
+To use Persistency an application needs to include the headers and instantiate
+the provided objects to get access to
+the functions.
+
+To use the KeyValueStorage, create a KeyValueStorage object and create entries
+of type KvsType to store them in the
+KayValueStorage. It is important to call the function
+KeyValueStorage::SyncToStorage to persist the data stored in the
+database. The example shown in \ref{lst:kvs-example} demonstrates the usage of
+the KeyValueStorage. The key-value-pairs
+are stored in json format.
+
+\begin{lstlisting}[language=C++, caption={Example usage of the KeyValueStorage}, captionpos=b, label={lst:kvs-example}]
+#include <ara/per/keyvaluestorage.h>
+
+/* create a KeyValueStorage instance */
+KeyValueStorage kvstorage("path_to_keyvaluestorage_folder");
+
+/* create some KvsTypes to store them in the database */
+KvsType int_type(1);
+KvsType bool_type(false);
+KvsType string_type("string");
+
+/* insert the KvsTypes in the database */
+kvstorage.SetValue("anint", int_type);
+kvstorage.SetValue("abool", bool_type);
+kvstorage.SetValue("astring", string_type);
+
+/* test if data was stored and print the value */
+if(kvstorage.HasKey("anint")){
+    std::cout << kvstorage.GetValue("anint").GetSInt() << std::endl;
+}
+
+/* sync to storage */
+kvstorage.SyncToStorage();
+
+\end{lstlisting}
+
+To create an Read-, Write- or ReadWriteAccessor object the
+FileProcyAccessorFactory provides three functions
+(CreateReadAccess, CreateWriteAccess and CreateReadWriteAccess). Use the return
+value of these functions to access
+files. Use the global function CreateFileAccessorFactory to get the Factory.
+The files must already exist as they won't
+be created with instantiation of the file accessors. Example usage is shown in
+\ref{lst:fpaf-example}.
+
+\begin{lstlisting}[language=C++, caption={Example usage of the FileProxyAccessorFactory and Read-, Write- and ReadWriteAccessor}, captionpos=b, label={lst:fpaf-example}]
+#include <ara/per/fileproxyaccessorfactory.h>
+
+
+/* create a FileProxyAccessorFactory */
+FileProxyFactoryUnqiuePtr factory = CreateFileAccessorFactory("path_to_files");
+
+/*  Create a ReadAccessor for reading */
+FileProxyAccessUniquePtr<ReadAccessor> reader = factory->CreateReadAccess("file_to_read", BasicOperations::OpenMode::in);
+
+std::string result;
+reader->getline(result, '\n');
+
+/*  Create a WriteAccessor for writing */
+FileProxyAccessUniquePtr<WriteAccessor> writer = factory->CreateWriteAccess("file_to_write", BasicOperations::OpenMode::out);
+
+std::string write_this("to be written");
+writer->write(write_this.data(), write_this.size());
+
+/*  Create a ReadWriteAccessor for writing and reading */
+FileProxyAccessUniquePtr<ReadWriteAccessor> rw = factory->CreateRWAccess("file_to_write", BasicOperations::OpenMode::in | BasicOperations::OpenMode::out);
+
+std::string write_this("to be written\n");
+rw->write(write_this.data(), write_this.size());
+
+/*  set position in file to start */
+rw.seek(0);
+
+std::string result;
+rw->getline(result, '\n');
+
+\end{lstlisting}

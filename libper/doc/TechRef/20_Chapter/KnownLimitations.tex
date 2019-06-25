@@ -1,0 +1,56 @@
+%===========================================================================
+\chapter{Known Limitations \/ Deviations}
+\label{chap:KnownLimitations}
+\index{Known Limitations}
+\index{Deviations}
+
+\begin{table}[h!]
+	\pgfplotstabletypeset[
+	row sep=newline,
+	header=true,
+	columns/Deviation/.style={ column name={Limitations}, column
+	type=p{6.0cm}},
+	columns/Description/.style={ column name={Description}, column
+	type=p{9.0cm}}
+	]{
+	Limitation & Description
+	%
+	KeyValueStorage & Currently the KeyValueStorage is not able to re-read the synced key-value pairs. If the application using the persistency is restarted, the key-value-pairs are lost.
+	% PAASR-3120
+	%
+	Maximum amount of key-value-pairs & Currently not configurable and fixed to 1000.
+	% PAASR-2778
+	%
+	Maximum amount of smart pool objects & Currently not configurable and fixed to 5.
+	% PAASR-3032
+	}
+	\caption{Known Limitations}
+	\label{tab:KnownLimitations}
+\end{table}
+
+\section{Deviations}
+\label{sec:Deviations}
+\index{Deviations}
+Following the deviations from the AUTOSAR SWS to the Adaptive MICROSAR
+implementation are listed:
+
+\begin{table}[h!]
+	\pgfplotstabletypeset[
+	row sep=newline,
+	header=true,
+	columns/Deviation/.style={ column name={Deviation}, column
+	type=p{6.0cm}},
+	columns/Description/.style={ column name={Description}, column
+	type=p{9.0cm}}
+	]{
+	Deviation & Description
+	%
+	WriteAccessor & The WriteAccessor is currently not an 'own' implementation. An instance of WriteAccessor is a ReadWriteAccessor (with full read functionality). This decision was made because of the diamond shaped inheritance model AUTOSAR provided for the file accessors.
+	%
+	ReadWriteAccessor & The ReadWriteAccessor is currently not a pure virtual interface, but a full implementation.
+	%
+	Exceptions & The SWS specifies which exceptions is thrown by which function. Currently KeyValueStorage::GetAllKeys, KeyValueStorage::SetValue and KeyValueStorage::SyncToStorage are not throwing all of the stated exceptions, because they doesn't really help a user.
+	}
+	\caption{Deviations from AUTOSAR SWS}
+	\label{tab:Deviations}
+\end{table}

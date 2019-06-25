@@ -1,0 +1,26 @@
+{
+  "category" : "PLATFORM_LEVEL",
+  "name" : "someipd-posix",
+  "isAdaptiveApplication" : 1,
+  "processes" : [
+    {
+      "name" : "someipd",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-FIFO",
+          "schedulingPriority" : 80,
+          "options" : [
+            "-c" ,
+            "/opt/someipd-posix/etc/someipd-posix.json"
+          ],
+          "executionDependency" : {
+          },
+          "machineStates" : [
+            "Startup",
+            "Running"
+          ]
+        }
+      ]
+    }
+  ]
+}

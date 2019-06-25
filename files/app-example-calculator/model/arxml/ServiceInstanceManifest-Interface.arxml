@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>deployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>calculatorInterface_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT>
+              <SHORT-NAME>DivisionByZero</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/vector/calculatorService/calculatorInterface/divisionByZero</EVENT-REF>
+              <EVENT-ID>45677</EVENT-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT>
+              <SHORT-NAME>SomeipDivideResult</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/vector/calculatorService/calculatorInterface/divideResult</FIELD-REF>
+              <GET>
+                <SHORT-NAME>getDivideResult</SHORT-NAME>
+                <METHOD-ID>1701</METHOD-ID>
+                <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER>
+                <SHORT-NAME>DivideResultNotifier</SHORT-NAME>
+                <EVENT-ID>33010</EVENT-ID>
+                <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET>
+                <SHORT-NAME>setDivideResult</SHORT-NAME>
+                <METHOD-ID>1702</METHOD-ID>
+                <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT>
+              <SHORT-NAME>subtract</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/calculatorService/calculatorInterface/subtract</METHOD-REF>
+              <METHOD-ID>1666</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT>
+              <SHORT-NAME>add</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/calculatorService/calculatorInterface/add</METHOD-REF>
+              <METHOD-ID>1602</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT>
+              <SHORT-NAME>divide</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/calculatorService/calculatorInterface/divide</METHOD-REF>
+              <METHOD-ID>1603</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/vector/calculatorService/calculatorInterface</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP>
+              <SHORT-NAME>DivideResult_Eventgroup</SHORT-NAME>
+              <EVENT-GROUP-ID>9087</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/deployment/calculatorInterface_Someip/SomeipDivideResult/DivideResultNotifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP>
+              <SHORT-NAME>DivisionByZero_Eventgroup</SHORT-NAME>
+              <EVENT-GROUP-ID>888</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/deployment/calculatorInterface_Someip/DivisionByZero</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>1666</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>1</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

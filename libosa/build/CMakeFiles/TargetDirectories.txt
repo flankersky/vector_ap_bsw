@@ -1,0 +1,13 @@
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/CMakeFiles/install.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/CMakeFiles/list_install_components.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/CMakeFiles/install/strip.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/CMakeFiles/install/local.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/CMakeFiles/rebuild_cache.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/CMakeFiles/edit_cache.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/install.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/list_install_components.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/rebuild_cache.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/osabstraction.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/install/strip.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/install/local.dir
+/home/wsj/workspace/vector_ap/DATA/BSW/libosa/build/lib/CMakeFiles/edit_cache.dir

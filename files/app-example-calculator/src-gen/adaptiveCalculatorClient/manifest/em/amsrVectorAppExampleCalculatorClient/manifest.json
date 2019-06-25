@@ -1,0 +1,44 @@
+
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "amsrVectorAppExampleCalculatorClient",
+  "isAdaptiveApplication" : 1,
+  "processes" : [
+    {
+      "name" : "calcClientProc",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-ROUND-ROBIN",
+          "schedulingPriority" : 30,
+          "options" : [
+            "-c",
+            "/opt/amsrVectorAppExampleCalculatorClient/etc/application.json"
+          ],
+          "executionDependency" : {
+          },
+          "functionGroups" : [
+            {
+              "name" : "fg_com",
+              "states" : [
+                "Running"
+              ]
+            }
+          ],
+          "cores" : {
+            "shallNotRunOn" : [
+              1,
+              2,
+              3
+            ],
+            "shallRunOn" : [
+              0
+            ]
+          },
+          "machineStates" : [
+            "Running"
+          ]
+        }
+      ]
+    }
+  ]
+}

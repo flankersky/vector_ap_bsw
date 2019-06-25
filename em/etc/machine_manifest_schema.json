@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Schema for the JSON representation of application manifest files",
+    "definitions": {
+        "machineModePrototype": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "machine": {
+            "type": "object",
+            "properties": {
+                "states": {
+                    "$ref": "#/definitions/machineModePrototype"
+                },
+                "functionGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "states": {
+                                "$ref": "#/definitions/machineModePrototype"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

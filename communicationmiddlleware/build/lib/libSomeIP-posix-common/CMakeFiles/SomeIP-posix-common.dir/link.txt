@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSomeIP-posix-common.a  CMakeFiles/SomeIP-posix-common.dir/src/someipd_posix/routing/message_reader.cc.o CMakeFiles/SomeIP-posix-common.dir/src/someip/someip_message.cc.o CMakeFiles/SomeIP-posix-common.dir/src/someip/someip_stream_message_reader.cc.o CMakeFiles/SomeIP-posix-common.dir/src/someip/serialize.cc.o CMakeFiles/SomeIP-posix-common.dir/src/someip/message_builder.cc.o CMakeFiles/SomeIP-posix-common.dir/src/someip/someip_datagram_message_reader.cc.o
+/usr/bin/ranlib libSomeIP-posix-common.a

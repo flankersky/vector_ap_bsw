@@ -1,0 +1,129 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Schema for the JSON representation of application manifest files",
+    "definitions": {
+        "machineModePrototype": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "type": "object",
+    "required": [
+        "category",
+        "name",
+        "processes"
+    ],
+    "properties": {
+        "category": {
+            "type": "string",
+            "enum": [
+                "APPLICATION_LEVEL",
+                "PLATFORM_LEVEL"
+            ]
+        },
+        "name": {
+            "type": "string"
+        },
+        "isAdaptiveApplication": {
+            "type": "integer"
+        },
+        "processes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "maxProperties": 2,
+                "required": [
+                    "name",
+                    "startupConfigs"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "startupConfigs": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "schedulingPolicy",
+                                "schedulingPriority",
+                                "machineStates"
+                            ],
+                            "properties": {
+                                "schedulingPolicy": {
+                                    "type": "string",
+                                    "enum": [
+                                        "SCHEDULING-POLICY-OTHER",
+                                        "SCHEDULING-POLICY-FIFO",
+                                        "SCHEDULING-POLICY-ROUND-ROBIN"
+                                    ]
+                                },
+                                "schedulingPriority": {
+                                    "type": "integer"
+                                },
+                                "machineStates": {
+                                    "$ref": "#/definitions/machineModePrototype"
+                                },
+                                "functionGroups": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "states": {
+                                                "$ref": "#/definitions/machineModePrototype"
+                                            }
+                                        }
+                                    }
+                                },
+                                "options": {
+                                    "type": "array",
+                                    "minItems": 0,
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "executionDependency": {
+                                    "type": "object",
+                                    "minProperties": 0,
+                                    "additionalProperties": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "cores": {
+                                    "type": "object",
+                                    "maxProperties": 2,
+                                    "properties": {
+                                        "shallRunOn": {
+                                            "type": "array",
+                                            "minItems": 0,
+                                            "items": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "shallNotRunOn": {
+                                            "type": "array",
+                                            "minItems": 0,
+                                            "items": {
+                                                "type": "integer"
+                                            }
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false
+}

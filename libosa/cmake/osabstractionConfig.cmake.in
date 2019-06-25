@@ -1,0 +1,9 @@
+get_filename_component(OSABSTRACTION_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+# CONF_INCLUDE_DIRS must match the ${PROJECT_SOURCE_DIR}/lib/include of template
+set(OSABSTRACTION_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+# LIBRARY_NAME must match the name from varTargets.cmake
+set(OSABSTRACTION_LIBRARIES "@OSABSTRACTION_LIBRARIES@")
+# Variable to determine used OS abstraction in other modules
+set(OSABSTRACTION_NAME "@OSABSTRACTION_NAME@")
+
+include("${OSABSTRACTION_CMAKE_DIR}/osabstractionTargets.cmake")
