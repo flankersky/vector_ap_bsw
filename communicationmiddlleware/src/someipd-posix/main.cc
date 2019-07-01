@@ -95,7 +95,7 @@ static CommandLineArguments ParseArguments(int argc, char* argv[]) {
         break;
       case 'v':
         if (args.verbose_ < static_cast<std::size_t>(ara::log::LogLevel::kVerbose)) {
-          args.verbose_++;
+          args.verbose_ = static_cast<std::size_t>(ara::log::LogLevel::kVerbose);
         }
         break;
       case '?':
