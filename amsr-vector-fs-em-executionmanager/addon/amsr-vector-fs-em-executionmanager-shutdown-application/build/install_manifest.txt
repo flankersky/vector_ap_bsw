@@ -1,0 +1,2 @@
+/opt/amsr-vector-fs-em-executionmanager-shutdown-application/bin/amsr-vector-fs-em-executionmanager-shutdown-application
+/opt/amsr-vector-fs-em-executionmanager-shutdown-application/etc/manifest.json

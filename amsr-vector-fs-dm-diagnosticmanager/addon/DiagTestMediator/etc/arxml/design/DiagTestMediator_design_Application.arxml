@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag_test_mediator</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              <SHORT-NAME>DiagTestMediatorSwc</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>DM_IPC_SWCL_TEST</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/diag/DM_IPC</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>DataIdentifier_SWCL_A_DID_4711</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/diag/DataIdentifier_SWCL_A_DID_4711</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>DataIdentifier_SWCL_A_DID_F190</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/diag/DataIdentifier_SWCL_A_DID_F190</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>RoutineControl_SWCL_A_RID_3009</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/diag/RoutineControl_SWCL_A_RID_3009</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <EXECUTABLE>
+              <SHORT-NAME>DiagTestMediatorExe</SHORT-NAME>
+              <ROOT-SW-COMPONENT-PROTOTYPE>
+                <SHORT-NAME>DiagTestMediatorRootSwc</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/vector/diag_test_mediator/DiagTestMediatorSwc</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+            </EXECUTABLE>
+            <ADAPTIVE-AUTOSAR-APPLICATION>
+              <SHORT-NAME>DiagTestMediator</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <EXECUTABLE-REFS>
+                <EXECUTABLE-REF DEST="EXECUTABLE">/vector/diag_test_mediator/DiagTestMediatorExe</EXECUTABLE-REF>
+              </EXECUTABLE-REFS>
+            </ADAPTIVE-AUTOSAR-APPLICATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

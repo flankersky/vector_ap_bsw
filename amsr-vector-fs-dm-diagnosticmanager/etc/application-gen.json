@@ -1,0 +1,125 @@
+{
+    "services" : [
+    {
+      "name" : "DM_IPC_Someip",
+      "service_id" : 2100,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Service",
+          "id" : 100,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "DataIdentifier_SWCL_A_DID_4711_Someip",
+      "service_id" : 2112,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Read",
+          "id" : 112,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Write",
+          "id" : 113,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Cancel",
+          "id" : 114,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "DataIdentifier_SWCL_A_DID_F190_Someip",
+      "service_id" : 2113,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Read",
+          "id" : 115,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Write",
+          "id" : 116,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Cancel",
+          "id" : 117,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "GenericUDSService_Someip",
+      "service_id" : 2111,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Service",
+          "id" : 111,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "RoutineControl_SWCL_A_RID_3009_Someip",
+      "service_id" : 2114,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Start",
+          "id" : 118,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Stop",
+          "id" : 119,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "RequestResults",
+          "id" : 120,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    }
+  ],
+    "required_service_instances": [
+    ],
+    "provided_service_instances": [
+    ],
+    "network_endpoints": [
+    ]
+}

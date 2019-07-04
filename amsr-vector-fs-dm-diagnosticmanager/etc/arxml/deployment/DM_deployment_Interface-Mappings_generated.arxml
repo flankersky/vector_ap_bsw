@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag</SHORT-NAME>
+          <ELEMENTS>
+            <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>DiagnosticManager_RequiredSomeipServiceInstance_GenericUDSService</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/GenericUDSService_Someip</SERVICE-INTERFACE-REF>
+              <REQUIRED-SERVICE-INSTANCE-ID>2001</REQUIRED-SERVICE-INSTANCE-ID>
+              <REQUIRED-SERVICE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>ANY</MINOR-VERSION>
+              </REQUIRED-SERVICE-VERSION>
+            </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>DiagnosticManager_RequiredSomeipServiceInstance_GenericUDSService_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ClientMachine/ClientConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ara/diag/DiagnosticManager_RequiredSomeipServiceInstance_GenericUDSService</SERVICE-INSTANCE-REF>
+              <IPV-4-MULTICAST-IP-ADDRESS>224.0.0.1</IPV-4-MULTICAST-IP-ADDRESS>
+              <TCP-PORT>31401</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>DiagnosticManager_RequiredSomeipServiceInstance_GenericUDSService_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/ara/diag/DiagnosticManagerExe/DiagnosticManagerRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ara/diag/DiagnosticManagerSwc/GenericUDSService_SWCL_A</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/ara/diag/DiagnosticManagerProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ara/diag/DiagnosticManager_RequiredSomeipServiceInstance_GenericUDSService</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>DiagnosticManager_RequiredSomeipServiceInstance_DM_IPC</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/DM_IPC_Someip</SERVICE-INTERFACE-REF>
+              <REQUIRED-SERVICE-INSTANCE-ID>2005</REQUIRED-SERVICE-INSTANCE-ID>
+              <REQUIRED-SERVICE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>ANY</MINOR-VERSION>
+              </REQUIRED-SERVICE-VERSION>
+            </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>DiagnosticManager_RequiredSomeipServiceInstance_DM_IPC_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ClientMachine/ClientConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ara/diag/DiagnosticManager_RequiredSomeipServiceInstance_DM_IPC</SERVICE-INSTANCE-REF>
+              <IPV-4-MULTICAST-IP-ADDRESS>224.0.0.1</IPV-4-MULTICAST-IP-ADDRESS>
+              <TCP-PORT>31401</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>DiagnosticManager_RequiredSomeipServiceInstance_DM_IPC_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/ara/diag/DiagnosticManagerExe/DiagnosticManagerRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ara/diag/DiagnosticManagerSwc/DM_IPC_SWCL_TEST</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/ara/diag/DiagnosticManagerProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ara/diag/DiagnosticManager_RequiredSomeipServiceInstance_DM_IPC</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

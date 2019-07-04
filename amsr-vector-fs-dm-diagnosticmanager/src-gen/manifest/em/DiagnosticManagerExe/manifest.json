@@ -1,0 +1,13 @@
+
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "DiagnosticManagerExe",
+  "isAdaptiveApplication" : 1,
+  "processes" : [
+    {
+      "name" : "DiagnosticManagerProc",
+      "startupConfigs" : [
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE>
+          <SHORT-NAME>ServerMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>ServerConnector</SHORT-NAME>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/vector/Eth/EthCh1/DiagNetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/vector/Eth/EthCh1/SdMulticastEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>12330</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

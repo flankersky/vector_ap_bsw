@@ -1,0 +1,11 @@
+<%@jet
+package="com.vector.cfg.gen.amsrgen_dm_vector.outputfiles.jetclasses"
+class="DmBaseConfig_JsonJet"
+extends="com.vector.cfg.gen.core.utils.fileoutput.AbstractJetTemplate"
+
+imports ="com.vector.cfg.gen.amsrgen_dm_vector.outputfiles.jetargs.*"
+%>
+<%  this.assignTemplateStringBuffer(stringBuffer);
+    DmBaseConfig_JsonJetArg jetArg = (DmBaseConfig_JsonJetArg) argument;
+%>
+<%= jetArg.getJetData() %>

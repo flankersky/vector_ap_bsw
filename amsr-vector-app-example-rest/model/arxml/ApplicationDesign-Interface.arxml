@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>restfulService</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>restfulInterface</SHORT-NAME>
+              <EVENTS />
+              <FIELDS />
+              <METHODS />
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>vector</SHORT-NAME>
+                  <SYMBOL>vector</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>restfulService</SHORT-NAME>
+                  <SYMBOL>restfulService</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+            </SERVICE-INTERFACE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

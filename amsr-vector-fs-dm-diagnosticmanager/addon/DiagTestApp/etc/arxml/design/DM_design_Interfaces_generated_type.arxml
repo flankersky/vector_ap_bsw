@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>DataIdentifier_SWCL_A_DID_4711</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>ara</SHORT-NAME>
+                  <SYMBOL>ara</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>diag</SHORT-NAME>
+                  <SYMBOL>diag</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>service_interfaces</SHORT-NAME>
+                  <SYMBOL>service_interfaces</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>data_identifier</SHORT-NAME>
+                  <SYMBOL>data_identifier</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Read</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>dataRecord_DataElement_one</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>dataRecord_DataElement_two</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/DataIdentifier_SWCL_A_DID_4711/UDSServiceFailedOnRead</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Write</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>dataRecord_DataElement_one</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>dataRecord_DataElement_two</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/DataIdentifier_SWCL_A_DID_4711/UDSServiceFailedOnWrite</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Cancel</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <POSSIBLE-ERRORS>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnRead</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnRead is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/DataIdentifier_SWCL_A_DID_4711/Read/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnWrite</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnWrite is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/DataIdentifier_SWCL_A_DID_4711/Write/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+              </POSSIBLE-ERRORS>
+            </SERVICE-INTERFACE>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>DataIdentifier_SWCL_A_DID_F190</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>ara</SHORT-NAME>
+                  <SYMBOL>ara</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>diag</SHORT-NAME>
+                  <SYMBOL>diag</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>service_interfaces</SHORT-NAME>
+                  <SYMBOL>service_interfaces</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>data_identifier_F190</SHORT-NAME>
+                  <SYMBOL>data_identifier_F190</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Read</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>dataRecord_vin</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/fixed_size_array_with_17_uint8_items</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/DataIdentifier_SWCL_A_DID_F190/UDSServiceFailedOnRead</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Write</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>dataRecord_vin</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/fixed_size_array_with_17_uint8_items</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/DataIdentifier_SWCL_A_DID_F190/UDSServiceFailedOnWrite</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Cancel</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <POSSIBLE-ERRORS>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnRead</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnRead is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/DataIdentifier_SWCL_A_DID_F190/Read/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnWrite</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnWrite is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/DataIdentifier_SWCL_A_DID_F190/Write/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+              </POSSIBLE-ERRORS>
+            </SERVICE-INTERFACE>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>RoutineControl_SWCL_A_RID_3009</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>ara</SHORT-NAME>
+                  <SYMBOL>ara</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>diag</SHORT-NAME>
+                  <SYMBOL>diag</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>service_interfaces</SHORT-NAME>
+                  <SYMBOL>service_interfaces</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>routine_control_3009</SHORT-NAME>
+                  <SYMBOL>routine_control_3009</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Start</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>Req_Reset</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>Req_CounterLimit</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/RoutineControl_SWCL_A_RID_3009/UDSServiceFailedOnStart</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Stop</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>Resp_RemainingCounts</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/RoutineControl_SWCL_A_RID_3009/UDSServiceFailedOnStop</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>RequestResults</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>Resp_RemainingCounts</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/RoutineControl_SWCL_A_RID_3009/UDSServiceFailedOnRequestResults</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <POSSIBLE-ERRORS>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnStart</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnStart is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/RoutineControl_SWCL_A_RID_3009/Start/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnStop</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnStop is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/RoutineControl_SWCL_A_RID_3009/Stop/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailedOnRequestResults</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailedOnRequestResults is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/RoutineControl_SWCL_A_RID_3009/RequestResults/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+              </POSSIBLE-ERRORS>
+            </SERVICE-INTERFACE>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>types</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>fixed_size_array_with_17_uint8_items</SHORT-NAME>
+                  <CATEGORY>ARRAY</CATEGORY>
+                  <SUB-ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>Element</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <ARRAY-SIZE>17</ARRAY-SIZE>
+                      <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                  </SUB-ELEMENTS>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

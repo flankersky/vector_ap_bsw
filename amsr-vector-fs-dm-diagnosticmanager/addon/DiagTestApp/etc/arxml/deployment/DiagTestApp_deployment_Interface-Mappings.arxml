@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag_test_app</SHORT-NAME>
+          <ELEMENTS>
+            <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_GenericUDSService</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/GenericUDSService_Someip</SERVICE-INTERFACE-REF>
+              <SD-SERVER-CONFIG>
+                <INITIAL-OFFER-BEHAVIOR>
+                  <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                  <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                  <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+                  <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                </INITIAL-OFFER-BEHAVIOR>
+                <OFFER-CYCLIC-DELAY>2.0</OFFER-CYCLIC-DELAY>
+                <REQUEST-RESPONSE-DELAY>
+                  <MAX-VALUE>1.5</MAX-VALUE>
+                  <MIN-VALUE>1.5</MIN-VALUE>
+                </REQUEST-RESPONSE-DELAY>
+                <SERVICE-OFFER-TIME-TO-LIVE>3</SERVICE-OFFER-TIME-TO-LIVE>
+              </SD-SERVER-CONFIG>
+              <SERVICE-INSTANCE-ID>2001</SERVICE-INSTANCE-ID>
+            </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_GenericUDSService_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ServerMachine/ServerConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_GenericUDSService</SERVICE-INSTANCE-REF>
+              <TCP-PORT>31402</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>Calculator_ProvidedSomeipServiceInstance_GenericUDSService_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/diag_test_app/DiagTestAppExe/DiagTestAppRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/vector/diag_test_app/DiagTestAppSwc/GenericUDSService_SWCL_A</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/diag_test_app/DiagTestAppProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_GenericUDSService</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_4711</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/DataIdentifier_SWCL_A_DID_4711_Someip</SERVICE-INTERFACE-REF>
+              <SD-SERVER-CONFIG>
+                <INITIAL-OFFER-BEHAVIOR>
+                  <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                  <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                  <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+                  <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                </INITIAL-OFFER-BEHAVIOR>
+                <OFFER-CYCLIC-DELAY>2.0</OFFER-CYCLIC-DELAY>
+                <REQUEST-RESPONSE-DELAY>
+                  <MAX-VALUE>1.5</MAX-VALUE>
+                  <MIN-VALUE>1.5</MIN-VALUE>
+                </REQUEST-RESPONSE-DELAY>
+                <SERVICE-OFFER-TIME-TO-LIVE>3</SERVICE-OFFER-TIME-TO-LIVE>
+              </SD-SERVER-CONFIG>
+              <SERVICE-INSTANCE-ID>2002</SERVICE-INSTANCE-ID>
+            </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_4711_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ServerMachine/ServerConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_4711</SERVICE-INSTANCE-REF>
+              <TCP-PORT>31402</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>Calculator_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_4711_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/diag_test_app/DiagTestAppExe/DiagTestAppRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/vector/diag_test_app/DiagTestAppSwc/DataIdentifier_SWCL_A_DID_4711</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/diag_test_app/DiagTestAppProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_4711</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_F190</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/DataIdentifier_SWCL_A_DID_F190_Someip</SERVICE-INTERFACE-REF>
+              <SD-SERVER-CONFIG>
+                <INITIAL-OFFER-BEHAVIOR>
+                  <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                  <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                  <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+                  <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                </INITIAL-OFFER-BEHAVIOR>
+                <OFFER-CYCLIC-DELAY>2.0</OFFER-CYCLIC-DELAY>
+                <REQUEST-RESPONSE-DELAY>
+                  <MAX-VALUE>1.5</MAX-VALUE>
+                  <MIN-VALUE>1.5</MIN-VALUE>
+                </REQUEST-RESPONSE-DELAY>
+                <SERVICE-OFFER-TIME-TO-LIVE>3</SERVICE-OFFER-TIME-TO-LIVE>
+              </SD-SERVER-CONFIG>
+              <SERVICE-INSTANCE-ID>2003</SERVICE-INSTANCE-ID>
+            </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_F190_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ServerMachine/ServerConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_F190</SERVICE-INSTANCE-REF>
+              <TCP-PORT>31402</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+			 <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>Calculator_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_F190_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/diag_test_app/DiagTestAppExe/DiagTestAppRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/vector/diag_test_app/DiagTestAppSwc/DataIdentifier_SWCL_A_DID_F190</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/diag_test_app/DiagTestAppProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_F190</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_RoutineControl_SWCL_A_RID_3009</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/deployment/RoutineControl_SWCL_A_RID_3009_Someip</SERVICE-INTERFACE-REF>
+              <SD-SERVER-CONFIG>
+                <INITIAL-OFFER-BEHAVIOR>
+                  <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                  <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                  <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+                  <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                </INITIAL-OFFER-BEHAVIOR>
+                <OFFER-CYCLIC-DELAY>2.0</OFFER-CYCLIC-DELAY>
+                <REQUEST-RESPONSE-DELAY>
+                  <MAX-VALUE>1.5</MAX-VALUE>
+                  <MIN-VALUE>1.5</MIN-VALUE>
+                </REQUEST-RESPONSE-DELAY>
+                <SERVICE-OFFER-TIME-TO-LIVE>3</SERVICE-OFFER-TIME-TO-LIVE>
+              </SD-SERVER-CONFIG>
+              <SERVICE-INSTANCE-ID>2004</SERVICE-INSTANCE-ID>
+            </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>DiagTestApp_ProvidedSomeipServiceInstance_RoutineControl_SWCL_A_RID_3009_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ServerMachine/ServerConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_RoutineControl_SWCL_A_RID_3009</SERVICE-INSTANCE-REF>
+              <TCP-PORT>31402</TCP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              <SHORT-NAME>Calculator_ProvidedSomeipServiceInstance_RoutineControl_SWCL_A_RID_3009_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/diag_test_app/DiagTestAppExe/DiagTestAppRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/vector/diag_test_app/DiagTestAppSwc/RoutineControl_SWCL_A_RID_3009</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/diag_test_app/DiagTestAppProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/diag_test_app/DiagTestApp_ProvidedSomeipServiceInstance_RoutineControl_SWCL_A_RID_3009</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

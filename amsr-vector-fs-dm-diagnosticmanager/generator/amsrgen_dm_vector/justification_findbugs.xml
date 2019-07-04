@@ -1,0 +1,10 @@
+<!-- Findbugs error justifications
+     see http://findbugs.sourceforge.net/manual/filter.html
+-->
+<FindBugsFilter>
+  <!-- visswa: Ignore all errors from generated JET classes -->
+  <Match>
+      <Package name="~.*outputfiles\.jetclasses.*"/>
+  </Match>
+</FindBugsFilter>
+

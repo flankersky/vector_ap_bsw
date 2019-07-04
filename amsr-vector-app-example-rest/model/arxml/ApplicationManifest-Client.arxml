@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>rest</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS>
+              <SHORT-NAME>restfulClientProc</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/vector/rest/restfulClientExe</EXECUTABLE-REF>
+              <MODE-DEPENDENT-STARTUP-CONFIGS>
+                <MODE-DEPENDENT-STARTUP-CONFIG>
+                  <MACHINE-MODE-IREFS>
+                    <MACHINE-MODE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/vector/ClientMachine/ClientModeMachine</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/vector/VehicleStateMachine/Running</TARGET-MODE-DECLARATION-REF>
+                    </MACHINE-MODE-IREF>
+                  </MACHINE-MODE-IREFS>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/vector/rest/ClientStartupConfigs/StartupModeIndependent</STARTUP-CONFIG-REF>
+                </MODE-DEPENDENT-STARTUP-CONFIG>
+              </MODE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+            <STARTUP-CONFIG-SET>
+              <SHORT-NAME>ClientStartupConfigs</SHORT-NAME>
+              <STARTUP-CONFIGS>
+                <STARTUP-CONFIG>
+                  <SHORT-NAME>StartupModeIndependent</SHORT-NAME>
+                  <SCHEDULING-POLICY>SCHEDULING-POLICY-FIFO</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>1</SCHEDULING-PRIORITY>
+                  <STARTUP-OPTIONS>
+                    <STARTUP-OPTION>
+                      <OPTION-ARGUMENT>../etc/configuration.json</OPTION-ARGUMENT>
+                      <OPTION-KIND>COMMAND-LINE-SHORT-FORM</OPTION-KIND>
+                      <OPTION-NAME>c</OPTION-NAME>
+                    </STARTUP-OPTION>
+                  </STARTUP-OPTIONS>
+                </STARTUP-CONFIG>
+              </STARTUP-CONFIGS>
+            </STARTUP-CONFIG-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

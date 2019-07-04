@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSomeIP-posix.a  CMakeFiles/SomeIP-posix.dir/src/someip_posix.cc.o
-/usr/bin/ranlib libSomeIP-posix.a

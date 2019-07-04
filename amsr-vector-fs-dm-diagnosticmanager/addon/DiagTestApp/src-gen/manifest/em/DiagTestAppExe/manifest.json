@@ -1,0 +1,13 @@
+
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "DiagTestAppExe",
+  "isAdaptiveApplication" : 1,
+  "processes" : [
+    {
+      "name" : "DiagTestAppProc",
+      "startupConfigs" : [
+      ]
+    }
+  ]
+}

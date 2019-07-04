@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/njl/AP/BSW/amsr-vector-fs-em-executionmanager/addon/amsr-vector-fs-em-executionmanager-shutdown-application/run.cc
+osabstraction/oscontrol/oscontrol.h
+/home/njl/AP/BSW/amsr-vector-fs-em-executionmanager/addon/amsr-vector-fs-em-executionmanager-shutdown-application/osabstraction/oscontrol/oscontrol.h
+
+/usr/local/lib/cmake/osabstraction/../../../include/osabstraction/oscontrol/oscontrol.h
+osabstraction/oscontrol/oscontrollerinterface.h
+/usr/local/lib/cmake/osabstraction/../../../include/osabstraction/oscontrol/osabstraction/oscontrol/oscontrollerinterface.h
+
+/usr/local/lib/cmake/osabstraction/../../../include/osabstraction/oscontrol/oscontrollerinterface.h
+

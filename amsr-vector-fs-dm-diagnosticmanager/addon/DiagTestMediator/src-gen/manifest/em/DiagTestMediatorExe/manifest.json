@@ -1,0 +1,13 @@
+
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "DiagTestMediatorExe",
+  "isAdaptiveApplication" : 1,
+  "processes" : [
+    {
+      "name" : "DiagTestMediatorProc",
+      "startupConfigs" : [
+      ]
+    }
+  ]
+}

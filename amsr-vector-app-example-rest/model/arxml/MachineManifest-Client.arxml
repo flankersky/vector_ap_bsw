@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE>
+          <SHORT-NAME>ClientMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>ClientConnector</SHORT-NAME>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/vector/Eth/EthCh1/CalcNetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <MACHINE-MODE-MACHINES>
+            <MODE-DECLARATION-GROUP-PROTOTYPE>
+              <SHORT-NAME>ClientModeMachine</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/vector/VehicleStateMachine</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+          </MACHINE-MODE-MACHINES>
+          <MODULE-INSTANTIATIONS>
+            <OS-MODULE-INSTANTIATION>
+              <SHORT-NAME>OsModule</SHORT-NAME>
+              <RESOURCE-GROUPS>
+                <RESOURCE-GROUP>
+                  <SHORT-NAME>OsModuleResources</SHORT-NAME>
+                </RESOURCE-GROUP>
+              </RESOURCE-GROUPS>
+            </OS-MODULE-INSTANTIATION>
+            <GENERIC-MODULE-INSTANTIATION>
+              <SHORT-NAME>ClientModule</SHORT-NAME>
+              <PROCESS-REF DEST="PROCESS">/vector/rest/restfulClientProc</PROCESS-REF>
+            </GENERIC-MODULE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/vector/Eth/EthCh1/SdMulticastEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>12330</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

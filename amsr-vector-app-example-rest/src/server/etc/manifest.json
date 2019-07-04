@@ -1,0 +1,23 @@
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "amsr-vector-app-example-rest-server",
+  "processes" : [
+    {
+      "name" : "rest-serverevent-process",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-FIFO",
+          "schedulingPriority" : 45,
+          "options" : [
+            "-c../etc/configuration.json"
+          ],
+          "executionDependency" : {
+          },
+          "machineStates" : [
+            "Running"
+          ]
+        }
+      ]
+    }
+  ]
+}

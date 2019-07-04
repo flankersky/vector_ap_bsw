@@ -1,0 +1,152 @@
+/*
+    =============================================================================================================
+    COPYRIGHT
+    ==============================================================================================================
+    Copyright (c) 2017 by Vector Informatik GmbH.                                             All rights reserved.
+
+                  This software is copyright protected and proprietary to Vector Informatik GmbH.
+                  Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+                  All other rights remain with Vector Informatik GmbH.
+    ==============================================================================================================
+    DESCRIPTION
+    ==============================================================================================================
+        Project:  GenDevKitBuildGradle
+
+    Description:  dvCfgGenDevKitBootstrap file for Gradle build of an GenDevKit generator.
+    ==============================================================================================================
+
+    ==============================================================================================================
+    AUTHOR IDENTITY
+    ==============================================================================================================
+    Name                          Initials      Company
+    ==============================================================================================================
+    Andreas Turban                virtu         Vector Informatik GmbH
+    ==============================================================================================================
+    REVISION HISTORY
+    ==============================================================================================================
+    Version   Date        Author  Change Id     Description
+    ==============================================================================================================
+    1.0.0   2017-10-23  virtu     -             First GenDevKit Gradle build version
+    1.1.0   2017-11-29  virtu    DAVID00136109: FEAT-3151: GenDevKit AMSR: Added HTTP share support
+    ==============================================================================================================
+ *
+ * DO NOT CHANGE THIS FILE
+ */
+buildscript {
+    if (project.file('projectConfig.gradle').isFile()) {
+        apply from: 'projectConfig.gradle'
+    }
+    // The current dvCfgGenDevKitBootstrapVersion of this file
+    project.ext.dvCfgGenDevKitBootstrapVersion = "1.1.0"
+
+    if (!project.ext.has("dvCfgBuildEnvVersion")) {
+        throw new RuntimeException("""Invalid settings in projectConfig.gradle: The version dvCfgBuildEnvVersion is missing.
+Please add the line project.ext.dvCfgBuildEnvVersion='XX.XX.XX'
+""")
+    }
+
+    String genDevKitType = project.ext.has("dvCfgGenDevKitProductType") ? project.ext.dvCfgGenDevKitProductType : null
+    if (genDevKitType != "AMSR" && genDevKitType != "MSR") {
+        throw new RuntimeException("""Invalid settings in projectConfig.gradle: The dvCfgGenDevKitProductType is missing or has an invalid value. " +
+Valid values are 'AMSR' or 'MSR'.
+Please add the line project.ext.dvCfgGenDevKitProductType = 'AMSR'
+AMSR means Adaptive MICROSAR and MSR means Classic MICROSAR.""")
+    }
+
+    File genDevKitPath
+    String genDevKitVersion
+    if (!project.ext.has("dvCfgGenDevKitPath")) {
+        File genDevEnvPath
+        //checkForDvCfgInstallation
+        if (!project.ext.has("dvCfgGenDevEnv")) {
+            String value = System.getenv("DVCFG_GEN_DEVENV");
+            if (!value) {
+                throw new RuntimeException("The environment variable 'DVCFG_GEN_DEVENV' does not exist on this machine. Please create the variable in your system. Or set the intallation with -PdvCfgGenDevEnv")
+            }
+            genDevEnvPath = new File(value)
+            project.ext."dvCfgGenDevEnv" = genDevEnvPath
+        } else {
+            def value = project.ext.dvCfgGenDevEnv
+            value = (value instanceof String ? new File(value) : value)
+            genDevEnvPath = value
+            project.ext."dvCfgGenDevEnv" = genDevEnvPath
+        }
+
+        if (!genDevEnvPath.isDirectory()) {
+            throw new RuntimeException("The GenDevKit environment is not installed on the system. Please install it to $genDevEnvPath")
+        }
+
+        genDevKitVersion = project.ext.dvCfgBuildEnvVersion
+        genDevKitPath = new File(genDevEnvPath, genDevKitVersion)
+    } else {
+        //The hard coded GenDevKit path without version is set
+        genDevKitPath = project.ext."dvCfgGenDevKitPath"
+
+        if (!genDevKitPath.isDirectory()) {
+            throw new RuntimeException("The specified GenDevKit path is no directory. Please install the correct GenDevKit to $genDevKitPath")
+        }
+    }
+    def isVectorDomain = {
+        final String domain = System.getenv("USERDOMAIN");
+        if (domain != null && "VECTOR".equals(domain)) {
+            return true;
+        }
+        return false
+    }
+
+    if (genDevKitVersion && !genDevKitPath.isDirectory() && isVectorDomain()) {
+        project.logger.quiet("The $genDevKitType GenDevKit ($genDevKitVersion) is missing. Installing GenDevKit into '$genDevKitPath'...")
+        // Try to install GenDevKit from local Vector server
+
+        project.buildDir.mkdirs()
+        String fileName = "${genDevKitType}_GenDevKit_${genDevKitVersion}.zip"
+        def tempFile = new File(project.buildDir, fileName)
+        String src =  "http://vistrcfgci1.vi.vector.int/buildcomponents/GenDevKit/$genDevKitType/$fileName"
+        FileOutputStream tempFileStream
+        InputStream inStream
+        try{
+            try{
+                inStream = new URL(src).openStream()
+                tempFileStream = new FileOutputStream(tempFile)
+                tempFileStream.getChannel().transferFrom(java.nio.channels.Channels.newChannel(inStream), 0, Long.MAX_VALUE)
+            }finally{
+                tempFileStream?.close()
+                inStream?.close()
+            }
+        }catch(Exception ex){
+              throw new RuntimeException("Could not download GenDevKit ($genDevKitVersion) from server. Please install it manually to $genDevKitPath.", ex)
+        }
+
+        project.copy {
+            from project.zipTree(tempFile)
+            into genDevKitPath
+        }
+        project.delete(tempFile)
+        project.logger.quiet("$genDevKitType GenDevKit installation done")
+    }
+    if (!genDevKitPath.isDirectory()) {
+        throw new RuntimeException("The $genDevKitType GenDevKit ($genDevKitVersion) is not installed on the system. Please install it to $genDevKitPath")
+    }
+
+    def ivyRepo = new File(genDevKitPath, "buildLibs").absoluteFile
+
+    repositories {
+        mavenLocal()
+        ivy {
+            url ivyRepo
+            layout 'pattern', {
+                artifact "[artifact]-[revision](-[classifier])(.[ext])"
+                ivy 'ivy.xml'
+            }
+        }
+    }
+
+    dependencies {
+        classpath 'com.vector.cfg.build.gradle:GenDevKitBuildGradle:1.+'
+    }
+
+
+}
+import com.vector.cfg.build.gradle.gendevkit.GenDevKitGradlePlugin
+
+apply plugin: GenDevKitGradlePlugin

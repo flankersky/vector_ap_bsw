@@ -1,0 +1,16 @@
+/* GenDevKit configuration */
+dvCfgGenDevKit{
+    generator{
+        vendor = "Vector Informatik GmbH"
+        generatorPackageName = "amsrgen_dm_vector"
+        jarSigningEnabled = false // Disable JAR signing because currently not supported by AraApp
+
+        adaptive = true          // The default is false
+        allowBetaApiUsage = true  // The default is false
+
+        dependencies {
+            // Dependency to amsrgen_base
+            compile ('com.vector.cfg.gen:amsrgen_base')
+        }
+    }
+}

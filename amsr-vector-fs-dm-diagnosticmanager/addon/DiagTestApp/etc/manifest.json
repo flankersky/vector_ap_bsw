@@ -1,0 +1,23 @@
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "diag-test-app",
+  "processes" : [
+    {
+      "name" : "diag-test-app-proc",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-ROUND-ROBIN",
+          "schedulingPriority" : 40,
+          "options" : [
+          ],
+          "executionDependency" : {
+            "someipd" : 0
+          },
+          "machineStates" : [
+            "Running"
+          ]
+        }
+      ]
+    }
+  ]
+}

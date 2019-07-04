@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>rest</SHORT-NAME>
+          <ELEMENTS>
+            <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>restful_ProvidedSomeipServiceInstance</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE">/deployment/restfulInterface_Someip</SERVICE-INTERFACE-REF>
+              <PROVIDED-EVENT-GROUPS />
+              <SD-SERVER-CONFIG>
+                <INITIAL-OFFER-BEHAVIOR>
+                  <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                  <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                  <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+                  <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                </INITIAL-OFFER-BEHAVIOR>
+                <OFFER-CYCLIC-DELAY>2.0</OFFER-CYCLIC-DELAY>
+                <REQUEST-RESPONSE-DELAY>
+                  <MAX-VALUE>1.5</MAX-VALUE>
+                  <MIN-VALUE>1.5</MIN-VALUE>
+                </REQUEST-RESPONSE-DELAY>
+                <SERVICE-OFFER-TIME-TO-LIVE>3</SERVICE-OFFER-TIME-TO-LIVE>
+              </SD-SERVER-CONFIG>
+              <SERVICE-INSTANCE-ID>9999</SERVICE-INSTANCE-ID>
+            </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>restful_ProvidedSomeipServiceInstance_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ServerMachine/ServerConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/rest/restful_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+              <IPV-4-MULTICAST-IP-ADDRESS>224.0.0.1</IPV-4-MULTICAST-IP-ADDRESS>
+              <PORT-CONFIGS>
+                <SERVICE-INSTANCE-PORT-CONFIG>
+                  <EVENT-MULTICAST-UDP-PORT>
+                    <PORT-NUMBER>12330</PORT-NUMBER>
+                  </EVENT-MULTICAST-UDP-PORT>
+                  <TCP-PORT>
+                    <PORT-NUMBER>31402</PORT-NUMBER>
+                  </TCP-PORT>
+                </SERVICE-INSTANCE-PORT-CONFIG>
+              </PORT-CONFIGS>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-APPLICATION-ENDPOINT-MAPPING>
+              <SHORT-NAME>restful_ProvidedSomeipServiceInstance_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/rest/restServerExe/restServerRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/vector/rest/restServer/calcPortP</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/rest/restServerProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/vector/rest/restful_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-APPLICATION-ENDPOINT-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>rest</SHORT-NAME>
+          <ELEMENTS>
+            <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              <SHORT-NAME>restful_RequiredSomeipServiceInstance</SHORT-NAME>
+              <SERVICE-INTERFACE-REF DEST="SOMEIP-SERVICE-INTERFACE">/deployment/restfulInterface_Someip</SERVICE-INTERFACE-REF>
+              <REQUIRED-SERVICE-INSTANCE-ID>9999</REQUIRED-SERVICE-INSTANCE-ID>
+              <REQUIRED-SERVICE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>ANY</MINOR-VERSION>
+              </REQUIRED-SERVICE-VERSION>
+            </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              <SHORT-NAME>restful_RequiredSomeipServiceInstance_toMachine</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/vector/ClientMachine/ClientConnector</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/vector/rest/restful_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+              <IPV-4-MULTICAST-IP-ADDRESS>224.0.0.1</IPV-4-MULTICAST-IP-ADDRESS>
+              <PORT-CONFIGS>
+                <SERVICE-INSTANCE-PORT-CONFIG>
+                  <TCP-PORT>
+                    <PORT-NUMBER>31401</PORT-NUMBER>
+                  </TCP-PORT>
+                </SERVICE-INSTANCE-PORT-CONFIG>
+              </PORT-CONFIGS>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SERVICE-INSTANCE-TO-APPLICATION-ENDPOINT-MAPPING>
+              <SHORT-NAME>restful_RequiredSomeipServiceInstance_toPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/rest/restfulClientExe/restfulClientRootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/vector/rest/restfulClientSWC/restPortR</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/vector/rest/restfulClientProc</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/vector/rest/restful_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-APPLICATION-ENDPOINT-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

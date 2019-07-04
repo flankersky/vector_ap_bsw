@@ -1,0 +1,6 @@
+/opt/amsr-vector-fs-em-executionmanager-demo-application/bin/amsr-vector-fs-em-executionmanager-demo-application
+/opt/amsr-vector-fs-em-executionmanager-demo-application/etc/manifest.json
+/opt/amsr-vector-fs-em-executionmanager-demo-application2/bin/amsr-vector-fs-em-executionmanager-demo-application2
+/opt/amsr-vector-fs-em-executionmanager-demo-application2/etc/manifest.json
+/opt/amsr-vector-fs-em-executionmanager-demo-application3/bin/amsr-vector-fs-em-executionmanager-demo-application3
+/opt/amsr-vector-fs-em-executionmanager-demo-application3/etc/manifest.json

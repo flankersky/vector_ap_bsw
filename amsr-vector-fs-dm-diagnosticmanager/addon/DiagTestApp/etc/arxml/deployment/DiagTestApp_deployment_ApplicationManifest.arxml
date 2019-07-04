@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag_test_app</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS>
+              <SHORT-NAME>DiagTestAppProc</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/vector/diag_test_app/DiagTestAppExe</EXECUTABLE-REF>
+            </PROCESS>
+            <STARTUP-CONFIG-SET>
+              <SHORT-NAME>ServerStartupConfigs</SHORT-NAME>
+              <STARTUP-CONFIGS>
+                <STARTUP-CONFIG>
+                  <SHORT-NAME>StartupModeIndependent</SHORT-NAME>
+                  <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>1</SCHEDULING-PRIORITY>
+                  <STARTUP-OPTIONS>
+                    <STARTUP-OPTION>
+                      <OPTION-ARGUMENT>2</OPTION-ARGUMENT>
+                      <OPTION-KIND>COMMAND-LINE-LONG-FORM</OPTION-KIND>
+                      <OPTION-NAME>floatArithmetic</OPTION-NAME>
+                    </STARTUP-OPTION>
+                  </STARTUP-OPTIONS>
+                </STARTUP-CONFIG>
+              </STARTUP-CONFIGS>
+            </STARTUP-CONFIG-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

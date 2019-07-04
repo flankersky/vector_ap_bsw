@@ -1,0 +1,224 @@
+
+{
+  "services" : [
+    {
+      "name" : "DataIdentifier_SWCL_A_DID_4711_Someip",
+      "service_id" : 2112,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Read",
+          "id" : 112,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Write",
+          "id" : 113,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Cancel",
+          "id" : 114,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "DataIdentifier_SWCL_A_DID_F190_Someip",
+      "service_id" : 2113,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Read",
+          "id" : 115,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Write",
+          "id" : 116,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Cancel",
+          "id" : 117,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "GenericUDSService_Someip",
+      "service_id" : 2111,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Service",
+          "id" : 111,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "RoutineControl_SWCL_A_RID_3009_Someip",
+      "service_id" : 2114,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Start",
+          "id" : 118,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "Stop",
+          "id" : 119,
+          "proto" : "tcp"
+        },
+        {
+          "name" : "RequestResults",
+          "id" : 120,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    }
+  ],
+  "required_service_instances" : [
+  ],
+  "provided_service_instances" : [
+    {
+      "service_id" : 2112,
+      "instance_id" : 2002,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 2000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 3,
+        "eventgroups" : [
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_4711_toMachine",
+          "address" : "192.168.1.5",
+          "tcp_port" : 31402
+        }
+      ]
+    },
+    {
+      "service_id" : 2113,
+      "instance_id" : 2003,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 2000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 3,
+        "eventgroups" : [
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "DiagTestApp_ProvidedSomeipServiceInstance_DataIdentifier_SWCL_A_DID_F190_toMachine",
+          "address" : "192.168.1.5",
+          "tcp_port" : 31402
+        }
+      ]
+    },
+    {
+      "service_id" : 2111,
+      "instance_id" : 2001,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 2000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 3,
+        "eventgroups" : [
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "DiagTestApp_ProvidedSomeipServiceInstance_GenericUDSService_toMachine",
+          "address" : "192.168.1.5",
+          "tcp_port" : 31402
+        }
+      ]
+    },
+    {
+      "service_id" : 2114,
+      "instance_id" : 2004,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 2000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 3,
+        "eventgroups" : [
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "DiagTestApp_ProvidedSomeipServiceInstance_RoutineControl_SWCL_A_RID_3009_toMachine",
+          "address" : "192.168.1.5",
+          "tcp_port" : 31402
+        }
+      ]
+    }
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "DiagNetworkEndpoint",
+      "address" : "192.168.1.5",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12330
+      },
+      "ports" : [
+        {
+          "proto" : "tcp",
+          "port" : 31402
+        }
+      ]
+    }
+  ]
+}

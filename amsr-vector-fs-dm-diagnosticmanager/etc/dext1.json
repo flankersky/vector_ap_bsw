@@ -1,0 +1,285 @@
+{
+    "TargetAddress": 1,
+    "NumberConversations":30,
+    "UdsMessageLength": 1500,
+    "MaxNumberOfResponsePending" : 20,
+    "Sessions": [
+        {
+            "Id": 1,
+            "P2Time": 50,
+            "P2StarTime": 5000,
+            "Start" : {
+                "Handler": {
+                    "HandlerType": "External",
+                    "Instance": "HowToFindTheCorrectOne"
+                },
+                "Preconditions": {
+                    "Sessions": [1]
+                }
+            }
+        },
+        {
+            "Id": 2,
+            "P2Time": 50,
+            "P2StarTime": 5000,
+            "Start" : {
+                "Handler": {
+                    "HandlerType": "Internal",
+                    "Instance": "HowToFindTheCorrectOne"
+                },
+                "Preconditions": {
+                    "Sessions": [1]
+                }
+            }
+        },
+        {
+            "Id": 3,
+            "P2Time": 50,
+            "P2StarTime": 5000,
+            "Start" : {
+                "Handler": {
+                    "HandlerType": "Internal",
+                    "Instance": "HowToFindTheCorrectOne"
+                },
+                "Preconditions": {
+                    "Sessions": [1]
+                }
+            }
+        }
+    ],
+
+    "SecurityAccessLevels": [
+        {
+            "Id": 1,
+            "NumAttempts": 2,
+            "DelayTime": 10000,
+            "Unlock" : {
+                "Handler": {
+                    "HandlerType": "Internal",
+                    "Instance": "HowToFindTheCorrectOne"
+                },
+                "Preconditions": {
+                    "Sessions": [1]
+                }
+            }
+        },
+        {
+            "Id": 3,
+            "NumAttempts": 2,
+            "DelayTime": 10000,
+            "Unlock" : {
+                "Handler": {
+                    "HandlerType": "External",
+                    "Instance": "HowToFindTheCorrectOne"
+                },
+                "Preconditions": {
+                    "Sessions": [1],
+                    "SecurityAccessLevels": [0, 1]
+                }
+            }
+        }
+    ],
+
+    "ServiceTable": [
+        {
+            "Id": 186,
+            "Handler": {
+                "HandlerType": "External",
+                "Instance": "HowToFindTheCorrectOne"
+            }
+        },
+        {
+            "Id": 14,
+            "Handler": {
+                "HandlerType": "External",
+                "Instance": "HowToFindTheCorrectOne"
+            }
+        },
+        {
+            "Id": 16,
+            "Handler": {
+                "HandlerType": "Internal",
+                "Instance": "HowToFindTheCorrectOne"
+            },
+            "Preconditions": {
+                "Sessions": [0, 1, 2, 3]
+            }
+        },
+        {
+            "Id": 34,
+            "Handler": {
+                "HandlerType": "Internal",
+                "Instance": "HowToFindTheCorrectOne"
+            },
+            "Preconditions": {
+                    "Sessions": [1, 2, 3],
+                    "SecurityAccessLevels": [0, 1]
+            }
+        },
+        {
+            "Id": 46,
+            "Handler": {
+                "HandlerType": "Internal",
+                "Instance": "HowToFindTheCorrectOne"
+            }
+        },
+        {
+            "Id": 62,
+            "Handler": {
+                "HandlerType": "Internal",
+                "Instance": "HowToFindTheCorrectOne"
+            }
+        },
+        {
+            "Id": 49,
+            "Handler": {
+                "HandlerType": "Internal",
+                "Instance": "HowToFindTheCorrectOne"
+            }
+        },
+        {
+            "Id": 19,
+            "Handler": {
+                "HandlerType": "Internal",
+                "Instance": "HowToFindTheCorrectOne"
+            },
+            "Preconditions": {
+                "Sessions": [1]
+            },
+            "HasSubFunctions" : true,
+            "SubService": [
+                {
+                    "Id": 1,
+                    "Handler": {
+                        "HandlerType": "Internal",
+                        "Instance": "HowToFindTheCorrectOne"
+                    }
+                },
+                {
+                    "Id": 4,
+                    "Handler": {
+                        "HandlerType": "External",
+                        "Instance": "HowToFindTheCorrectOne"
+                    }
+                }
+            ]
+        }
+    ],
+    "RidTable":[
+        {
+            "Id":12297,
+            "Handler": {
+                "HandlerType": "Internal",
+                 "Instance": "HowToFindTheCorrectOne"
+            },
+            "Preconditions": {
+                    "Sessions": [1, 2, 3],
+                    "SecurityAccessLevels": [0,1]
+            },
+            "Start":{
+                "RidRequestData":{
+                    "MinLength":5,
+                    "MaxLength":5
+                },
+                "RidResponseData":{
+                    "MinLength":0,
+                    "MaxLength":0
+                }
+            },
+            "Stop":{
+                "RidRequestData":{
+                    "MinLength":0,
+                    "MaxLength":0
+                },
+                "RidResponseData":{
+                    "MinLength":4,
+                    "MaxLength":4
+                }
+            },
+            "RequestResults":{
+                "RidRequestData":{
+                    "MinLength":0,
+                    "MaxLength":0
+                },
+                "RidResponseData":{
+                    "MinLength":4,
+                    "MaxLength":4
+                }
+            }
+        }
+    ],
+    "DidTable":{
+        "MaxNumberOfDidsToRead": 2,
+        "Dids":[
+            {
+                "Id": 18193,
+                "DidDataElements":[
+                    {
+                        "MaxLength":3,
+                        "MinLength":3,
+                        "Handler": {
+                            "HandlerType":"External",
+                            "Instance":"HowToFindTheCorrectOne"
+                       }
+                    }
+                ],
+                "Read":{
+                    "Preconditions": {
+                        "Sessions": [1, 2, 3],
+                        "SecurityAccessLevels": [0, 1]
+                    }
+                },
+                "Write":{
+                    "Preconditions": {
+                        "Sessions": [1, 2, 3],
+                        "SecurityAccessLevels": [0, 1, 2]
+                    }
+                }
+            },
+            {
+                "Id": 61840,
+                "DidDataElements":[
+                    {
+                        "MaxLength":17,
+                        "MinLength":17,
+                        "Handler": {
+                            "HandlerType":"External",
+                            "Instance":"HowToFindTheCorrectOne"
+                       }
+                    }
+                ],
+                "Read":{
+                    "Preconditions": {
+                        "Sessions": [1, 2, 3],
+                        "SecurityAccessLevels": [0, 1]
+                    }
+                },
+                "Write":{
+                    "Preconditions": {
+                        "Sessions": [2],
+                        "SecurityAccessLevels": [0, 1, 2]
+                    }
+                }
+            },
+            {
+                "Id": 61830,
+                "DidDataElements":[
+                    {
+                        "MaxLength":1,
+                        "MinLength":1,
+                        "Handler": {
+                            "HandlerType":"Internal",
+                            "Instance":"HowToFindTheCorrectOne"
+                       }
+                    }
+                ],
+                "Read":{
+                    "Preconditions": {
+                        "Sessions": [1, 2, 3],
+                        "SecurityAccessLevels": [0, 1]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+/usr/local/lib/libpersistency.a
+/usr/local/include/ara/per/kvstype.h
+/usr/local/include/ara/per/keyvaluestorage.h
+/usr/local/include/ara/per/basicoperations.h
+/usr/local/include/ara/per/writeaccessor.h
+/usr/local/include/ara/per/common.h
+/usr/local/include/ara/per/internal/exception/configuration_exceptions.h
+/usr/local/include/ara/per/internal/json_parser.h
+/usr/local/include/ara/per/internal/json_writer.h
+/usr/local/include/ara/per/readaccessor.h
+/usr/local/include/ara/per/perexceptions.h
+/usr/local/include/ara/per/fileproxyaccessorfactory.h
+/usr/local/include/ara/per/file_proxy_accessor_factory_impl.h
+/usr/local/include/ara/per/readwriteaccessor.h
+/usr/local/lib/cmake/persistency/persistencyTargets.cmake
+/usr/local/lib/cmake/persistency/persistencyTargets-noconfig.cmake
+/usr/local/lib/cmake/persistency/persistencyConfig.cmake

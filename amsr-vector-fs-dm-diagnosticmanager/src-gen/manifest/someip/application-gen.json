@@ -1,0 +1,84 @@
+
+{
+  "services" : [
+    {
+      "name" : "DM_IPC_Someip",
+      "service_id" : 2100,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Service",
+          "id" : 100,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    },
+    {
+      "name" : "GenericUDSService_Someip",
+      "service_id" : 2111,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Service",
+          "id" : 111,
+          "proto" : "tcp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    }
+  ],
+  "required_service_instances" : [
+    {
+      "service_id" : 2100,
+      "instance_id" : 2005,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "port_mapping" : {
+        "name" : "DiagnosticManager_RequiredSomeipServiceInstance_DM_IPC_toMachine",
+        "address" : "192.168.1.5",
+        "tcp_port" : 31401,
+        "event_multicast_address" : "224.0.0.1"
+      }
+    },
+    {
+      "service_id" : 2111,
+      "instance_id" : 2001,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "port_mapping" : {
+        "name" : "DiagnosticManager_RequiredSomeipServiceInstance_GenericUDSService_toMachine",
+        "address" : "192.168.1.5",
+        "tcp_port" : 31401,
+        "event_multicast_address" : "224.0.0.1"
+      }
+    }
+  ],
+  "provided_service_instances" : [
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "DiagNetworkEndpoint",
+      "address" : "192.168.1.5",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12330
+      },
+      "ports" : [
+        {
+          "proto" : "tcp",
+          "port" : 31401
+        }
+      ]
+    }
+  ]
+}

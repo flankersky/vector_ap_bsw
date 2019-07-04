@@ -1,0 +1,6 @@
+{
+    "DextFiles":[
+        "./dext1.json"
+    ],
+    "GenericParameters": "./genericParameters.json"
+}

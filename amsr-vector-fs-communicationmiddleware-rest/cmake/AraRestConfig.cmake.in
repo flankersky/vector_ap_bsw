@@ -1,0 +1,14 @@
+
+get_filename_component(ARA_REST_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(ARA_REST_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+set(ARA_REST_LIBRARIES "@LIBRARY_NAME@")
+
+include(CMakeFindDependencyMacro)
+
+find_dependency(ara-logging REQUIRED)
+find_dependency(vac REQUIRED)
+find_dependency(persistency REQUIRED)
+find_dependency(Threads REQUIRED)
+find_package(Poco REQUIRED COMPONENTS XML JSON Util Net Foundation)
+
+include("${ARA_REST_CMAKE_DIR}/AraRestTargets.cmake")

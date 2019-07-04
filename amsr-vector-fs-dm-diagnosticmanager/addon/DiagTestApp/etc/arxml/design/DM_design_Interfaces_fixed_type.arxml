@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>GenericUDSService</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>ara</SHORT-NAME>
+                  <SYMBOL>ara</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>diag</SHORT-NAME>
+                  <SYMBOL>diag</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>service_interfaces</SHORT-NAME>
+                  <SYMBOL>service_interfaces</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>generic_uds_service</SHORT-NAME>
+                  <SYMBOL>generic_uds_service</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>Service</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>SID</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>RequestData</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/DataArrayType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>MetaInfo</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>ResponseData</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/DataArrayType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>errorContext</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/UDSResponseCodeType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/GenericUDSService/UDSServiceFailed</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <POSSIBLE-ERRORS>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>UDSServiceFailed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">errorContext of UDSServiceFailed is of Type UDSResponseCodeType.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-CONTEXT-REFS>
+                    <ERROR-CONTEXT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ara/diag/GenericUDSService/Service/errorContext</ERROR-CONTEXT-REF>
+                  </ERROR-CONTEXT-REFS>
+                </APPLICATION-ERROR>
+              </POSSIBLE-ERRORS>
+            </SERVICE-INTERFACE>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>DM_IPC</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>ara</SHORT-NAME>
+                  <SYMBOL>ara</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>diag</SHORT-NAME>
+                  <SYMBOL>diag</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>service_interfaces</SHORT-NAME>
+                  <SYMBOL>service_interfaces</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>dm_ipc</SHORT-NAME>
+                  <SYMBOL>dm_ipc</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>RequestData</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>handle</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>meta_info</SHORT-NAME>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>request_data</SHORT-NAME>
+                      <TYPE-TREF DEST="AUTOSAR-DATA-TYPE">/ara/diag/types/DataArrayType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>response_data</SHORT-NAME>
+                      <TYPE-TREF DEST="AUTOSAR-DATA-TYPE">/ara/diag/types/DataArrayType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/ara/diag/DM_IPC/Failed</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <POSSIBLE-ERRORS>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>Failed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Generic communication failure</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                </APPLICATION-ERROR>
+              </POSSIBLE-ERRORS>
+            </SERVICE-INTERFACE>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>types</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>DataArrayType</SHORT-NAME>
+                  <CATEGORY>VECTOR</CATEGORY>
+                  <SUB-ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>byte</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                  </SUB-ELEMENTS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>UDSResponseCodeType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Represents UDS Error Codes, which can be returned by the external service processor.</L-2>
+                  </DESC>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/diag/compu_methods/UDSResponseCodeTypeEnum</COMPU-METHOD-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>MetaInfoType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Meta-Inf map, which contains key-value pairs according to MetaInfoKeyType .</L-2>
+                  </DESC>
+                  <CATEGORY>ASSOCIATIVE_MAP</CATEGORY>
+                  <SUB-ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>MetaInfoKey</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoKeyType</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>MetaInfoValue</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/ara/diag/types/MetaInfoValueType</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                  </SUB-ELEMENTS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>MetaInfoKeyType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Represents the predefined/valid keys, which are available within the optional MetaInfo the DM provides in service processor calls.</L-2>
+                  </DESC>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/diag/compu_methods/MetaInfoKeyTypeEnum</COMPU-METHOD-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>MetaInfoValueType</SHORT-NAME>
+                  <CATEGORY>STRING</CATEGORY>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>compu_methods</SHORT-NAME>
+              <ELEMENTS>
+                <COMPU-METHOD>
+                  <SHORT-NAME>UDSResponseCodeTypeEnum</SHORT-NAME>
+                  <CATEGORY>TEXTTABLE</CATEGORY>
+                  <COMPU-INTERNAL-TO-PHYS>
+                    <COMPU-SCALES>
+                      <COMPU-SCALE>
+                        <SYMBOL>kGeneralReject</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x10</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x10</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kServiceNotSupported</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x11</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x11</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kSubfunctionNotSupported</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x12</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x12</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kIncorrectMessageLengthOrInvalidFormat</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x13</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x13</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kBusyRepeatRequest</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x21</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x21</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kConditionsNotCorrect</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x22</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x22</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kRequestSequenceError</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x24</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x24</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kNoResponseFromSubnetComponent</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x25</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x25</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kFailurePreventsExecutionOfRequestedAction</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x26</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x26</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kRequestOutOfRange</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x31</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x31</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kSecurityAccessDenied</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x33</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x33</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kInvalidKey</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x35</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x35</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kExceedNumberOfAttempts</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x36</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x36</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kRequiredTimeDelayNotExpired</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x37</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x37</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kUploadDownloadNotAccepted</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x70</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x70</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kTransferDataSuspended</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x71</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x71</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kGeneralProgrammingFailure</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x72</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x72</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kWrongBlockSequenceCounter</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x73</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x73</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kRequestCorrectlyReceivedResponsePending</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x78</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x78</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kSubFunctionNotSupportedInActiveSession</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x7E</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x7E</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kServiceNotSupportedInActiveSession</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x7F</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x7F</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kNoProcessingNoResponse</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0xFF</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0xFF</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                    </COMPU-SCALES>
+                  </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+                <COMPU-METHOD>
+                  <SHORT-NAME>MetaInfoKeyTypeEnum</SHORT-NAME>
+                  <CATEGORY>TEXTTABLE</CATEGORY>
+                  <COMPU-INTERNAL-TO-PHYS>
+                    <COMPU-SCALES>
+                      <COMPU-SCALE>
+                        <SYMBOL>SA</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>TA</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>REQUEST_HANDLE</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>REQUEST_TYPE</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>SUPP_POS_RESP</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x06</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x06</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>PROTOCOL_ID</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x07</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x07</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>DOIP_LOCAL_IP</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x08</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x08</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>DOIP_LOCAL_PORT</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x09</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x09</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>DOIP_REMOTE_IP</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x0A</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x0A</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>DOIP_REMOTE_PORT</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x0B</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x0B</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                    </COMPU-SCALES>
+                  </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,5 @@
+//Select 'AMSR' or 'MSR' for  AMSR for Adaptive MICROSAR or MSR Classic MICROSAR
+project.ext.dvCfgGenDevKitProductType = 'AMSR'
+
+// Please specify the versions of the GenDevKit to use
+project.ext.dvCfgBuildEnvVersion = "20.00.60"

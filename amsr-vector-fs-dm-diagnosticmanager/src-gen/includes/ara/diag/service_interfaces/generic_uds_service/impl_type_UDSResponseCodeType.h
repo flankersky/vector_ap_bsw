@@ -1,0 +1,75 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2018 by Vector Informatik GmbH. All rights reserved.
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  impl_type_UDSResponseCodeType.h
+ *        \brief
+ *
+ *      \details
+ *
+ *********************************************************************************************************************/
+
+#ifndef SRC_GEN_INCLUDES_ARA_DIAG_SERVICE_INTERFACES_GENERIC_UDS_SERVICE_IMPL_TYPE_UDSRESPONSECODETYPE_H_
+#define SRC_GEN_INCLUDES_ARA_DIAG_SERVICE_INTERFACES_GENERIC_UDS_SERVICE_IMPL_TYPE_UDSRESPONSECODETYPE_H_
+
+#include <array>
+#include <cstdint>
+#include <map>
+#include <string>
+#include <vector>
+#include "ara/diag/service_interfaces/generic_uds_service/impl_type_uint8.h"
+
+namespace ara {
+namespace diag {
+namespace service_interfaces {
+namespace generic_uds_service {
+
+/**
+ * \brief Type UDSResponseCodeType.
+ * \details Represents UDS Error Codes, which can be returned by the external service processor.
+ * \remark generated
+ *
+ * IMPLEMENTATION-DATA-TYPE /ara/diag/types/UDSResponseCodeType
+ * in the namespace of
+ * SERVICE-INTERFACE /ara/diag/GenericUDSService
+ */
+enum class UDSResponseCodeType : uint8 {
+  kGeneralReject = 16,
+  kServiceNotSupported = 17,
+  kSubfunctionNotSupported = 18,
+  kIncorrectMessageLengthOrInvalidFormat = 19,
+  kBusyRepeatRequest = 33,
+  kConditionsNotCorrect = 34,
+  kRequestSequenceError = 36,
+  kNoResponseFromSubnetComponent = 37,
+  kFailurePreventsExecutionOfRequestedAction = 38,
+  kRequestOutOfRange = 49,
+  kSecurityAccessDenied = 51,
+  kInvalidKey = 53,
+  kExceedNumberOfAttempts = 54,
+  kRequiredTimeDelayNotExpired = 55,
+  kUploadDownloadNotAccepted = 112,
+  kTransferDataSuspended = 113,
+  kGeneralProgrammingFailure = 114,
+  kWrongBlockSequenceCounter = 115,
+  kRequestCorrectlyReceivedResponsePending = 120,
+  kSubFunctionNotSupportedInActiveSession = 126,
+  kServiceNotSupportedInActiveSession = 127,
+  kNoProcessingNoResponse = 255
+};
+
+}  // namespace generic_uds_service
+}  // namespace service_interfaces
+}  // namespace diag
+}  // namespace ara
+
+#endif  // SRC_GEN_INCLUDES_ARA_DIAG_SERVICE_INTERFACES_GENERIC_UDS_SERVICE_IMPL_TYPE_UDSRESPONSECODETYPE_H_

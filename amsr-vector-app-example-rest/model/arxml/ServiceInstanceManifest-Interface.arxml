@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>deployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE>
+          <SHORT-NAME>restfulInterface_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS />
+          <FIELD-DEPLOYMENTS />
+          <METHOD-DEPLOYMENTS />
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/vector/restfulService/restfulInterface</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS />
+          <SERVICE-INTERFACE-ID>9999</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>1</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,11 @@
+rootProject.name = 'amsr-vector-fs-dm-diagnosticmanager-gen'
+
+/* amsrgen_base */
+includeBuild ("amsrgen_base") {
+  dependencySubstitution {
+    substitute module('com.vector.cfg.gen:amsrgen_base') with project(':')
+  }
+}
+
+/* amsrgen_dm_vector */
+include "amsrgen_dm_vector"

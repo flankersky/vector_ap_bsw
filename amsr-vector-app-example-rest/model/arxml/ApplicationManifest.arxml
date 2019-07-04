@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00042.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>vector</SHORT-NAME>
+      <ELEMENTS>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>ApplicationStateMachine</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/vector/VehicleStateMachine/Running</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION>
+              <SHORT-NAME>Running</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION>
+              <SHORT-NAME>Terminating</SHORT-NAME>
+              <VALUE>1</VALUE>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

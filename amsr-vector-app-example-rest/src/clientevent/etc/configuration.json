@@ -1,0 +1,48 @@
+{
+
+    "Configurations" : [
+
+        {
+            "Identifier" : "my_client_conf_id",
+            "Type"       : "client",
+            "BindingId"  : "binding_0"
+        },
+        {
+            "Identifier" : "my_server_conf_id",
+            "Type"       : "server",
+            "BindingIds" : [
+                "binding_1",
+                "binding_2"
+            ]
+        }
+    ],
+
+    "Bindings" : [
+
+        {
+            "Identifier" : "binding_0",
+            "Type": "client",
+            "TransportProtocol" : "HTTP/1.1",
+            "Authorization" : {
+                "Address" : "212.227.144.45",
+                "Port" : 80
+            }
+        },
+        {
+            "Identifier" : "binding_1",
+            "Type" : "server",
+            "TransportProtocol" : "HTTP/1.1",
+            "Address" : "127.0.0.1",
+            "Port" : 9090
+        },
+        {
+            "Identifier" : "binding_2",
+            "Type" : "server",
+            "TransportProtocol" : "HTTP/1.1",
+            "Address" : "::1",
+            "Port" : 9090
+        }
+    ]
+
+}
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              <SHORT-NAME>DiagnosticManagerSwc</SHORT-NAME>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <EXECUTABLE>
+              <SHORT-NAME>DiagnosticManagerExe</SHORT-NAME>
+              <ROOT-SW-COMPONENT-PROTOTYPE>
+                <SHORT-NAME>DiagnosticManagerRootSwc</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/ara/diag/DiagnosticManagerSwc</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+            </EXECUTABLE>
+            <ADAPTIVE-AUTOSAR-APPLICATION>
+              <SHORT-NAME>DiagnosticManager</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <EXECUTABLE-REFS>
+                <EXECUTABLE-REF DEST="EXECUTABLE">/ara/diag/DiagnosticManagerExe</EXECUTABLE-REF>
+              </EXECUTABLE-REFS>
+            </ADAPTIVE-AUTOSAR-APPLICATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

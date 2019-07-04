@@ -1,0 +1,2 @@
+/opt/amsr-vector-fs-em-executionmanager-restart-application/bin/amsr-vector-fs-em-executionmanager-restart-application
+/opt/amsr-vector-fs-em-executionmanager-restart-application/etc/manifest.json

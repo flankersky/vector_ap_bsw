@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00043.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>diag</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              <SHORT-NAME>DiagnosticManagerSwc</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>GenericUDSService_SWCL_A</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/diag/GenericUDSService</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>DM_IPC_SWCL_TEST</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/diag/DM_IPC</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

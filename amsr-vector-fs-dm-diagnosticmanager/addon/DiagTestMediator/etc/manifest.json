@@ -1,0 +1,23 @@
+{
+  "category" : "APPLICATION_LEVEL",
+  "name" : "diag-test-mediator",
+  "processes" : [
+    {
+      "name" : "diag-test-mediator-proc",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-ROUND-ROBIN",
+          "schedulingPriority" : 40,
+          "options" : [
+          ],
+          "executionDependency" : {
+            "someipd" : 0
+          },
+          "machineStates" : [
+            "Running"
+          ]
+        }
+      ]
+    }
+  ]
+}

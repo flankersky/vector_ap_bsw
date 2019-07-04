@@ -1,0 +1,24 @@
+{
+  "category" : "PLATFORM_LEVEL",
+  "name" : "DiagnosticManagerExe",
+  "processes" : [
+    {
+      "name" : "DiagnosticManagerProc",
+      "startupConfigs" : [
+        {
+          "schedulingPolicy" : "SCHEDULING-POLICY-ROUND-ROBIN",
+          "schedulingPriority" : 40,
+          "options" : [
+          ],
+          "executionDependency" : {
+            "someipd" : 0
+          },
+          "machineStates" : [
+            "Startup",
+            "Running"
+          ]
+        }
+      ]
+    }
+  ]
+}

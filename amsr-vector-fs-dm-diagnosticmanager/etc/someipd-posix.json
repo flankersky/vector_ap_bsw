@@ -1,0 +1,7 @@
+{
+    "control_socket_path": "/tmp/someipd-posix-control.socket",
+    "routing_socket_path": "/tmp/someipd-posix-routing.socket",
+    "applications": [
+        "."
+    ]
+}
